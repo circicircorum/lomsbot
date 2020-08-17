@@ -17,7 +17,8 @@ class LOMS(discord.Client):
 
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
-        await message.channel.send(f'Logged on as {self.user}!')
+        channel = self.get_channel(730386849570357258)
+        await channel.send(f'Logged on as {self.user}!')
 
     async def on_message(self, message):
         print(message, end='\n\n')
