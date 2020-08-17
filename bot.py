@@ -40,6 +40,9 @@ class LOMS(discord.Client):
             await message.channel.send('https://cdn.discordapp.com/attachments/658813940268269668/744772320282935326/image0-12.jpg')
         elif msg_tokens[0] == '!jail':
             await message.channel.send('https://cdn.discordapp.com/attachments/658813940268269668/744772320043728918/go_to_horny_jail_bonk.jpg')
+        elif msg_tokens[0] == '!heh':
+            await message.channel.send('https://cdn.discordapp.com/attachments/658813940268269668/743890032665952286/tsubasa_chibi_bliss_cutout.png')
+            
 
 
 # define main function
