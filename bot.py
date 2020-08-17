@@ -31,29 +31,12 @@ class LOMS(discord.Client):
             await self.process_command(message)
 
     async def process_command(self, message):
-        vid_url = 'https://www.youtube.com/watch?v=tU8FZtkTqos'
-        test_emb = discord.Embed(title='embed_message', url=vid_url)
         msg_tokens = message.content.split()
         if msg_tokens[0] == '!test':
             await message.channel.send("Testing command...")
-        elif msg_tokens[0] == '!testmore':
-            await message.channel.send('Testing file...', file=discord.File('res/test.txt'), embed=test_emb)
-        elif msg_tokens[0] == '!embed':
-            await message.channel.send("Testing embed...", embed=test_emb)
-        elif msg_tokens[0] == '!file':
-            await message.channel.send('Testing file...', file=discord.File('res/test.txt'))
-        elif msg_tokens[0] == '!img':
-            await message.channel.send('Testing image...', file=discord.File('res/test.png'))
         elif msg_tokens[0] == '!wah':
             await message.channel.send('<:migu:740390882435530792>')
-        elif msg_tokens[0] == '!smile':
-            await message.channel.send(file=discord.File('res/336656661387411456.png'))
         elif msg_tokens[0] == '!fish':
-            #fish_emb = discord.Embed(url='https://cdn.discordapp.com/emojis/651604101226037274.gif?v=1')
-            #fish_emb = discord.Embed(height=10, width=10)
-            #fish_emb.set_image(url='https://cdn.discordapp.com/emojis/651604101226037274.gif?v=1')
-            #print(fish_emb.image)
-            #await message.channel.send(embed=fish_emb)
             await message.channel.send('https://cdn.discordapp.com/emojis/651604101226037274.gif?v=1')
 
 
