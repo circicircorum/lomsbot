@@ -42,8 +42,11 @@ class LOMS(discord.Client):
             await message.channel.send('https://cdn.discordapp.com/attachments/658813940268269668/744772320043728918/go_to_horny_jail_bonk.jpg')
         elif msg_tokens[0] == '!heh':
             await message.channel.send('https://cdn.discordapp.com/attachments/658813940268269668/743890032665952286/tsubasa_chibi_bliss_cutout.png')
+        elif msg_tokens[0] == '!jar':
+            await message.channel.send('https://media.discordapp.net/attachments/491156706043232257/741047359752110144/jar_1.png \
+                                        https://media.discordapp.net/attachments/491156706043232257/741047360209289226/fubuki.gif \
+                                        https://media.discordapp.net/attachments/491156706043232257/741047360926384482/jar_2.png')
             
-
 
 # define main function
 def main():
