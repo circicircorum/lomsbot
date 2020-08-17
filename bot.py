@@ -22,12 +22,8 @@ class LOMS(discord.Client):
 
     async def on_message(self, message):
         print(message, end='\n\n')
-        
         print('Message from {0.author}: {0.content}'.format(message), end='\n\n')
 
-        # message.content is a single string(?)
-        if False:
-            print(dir(message))
 
         if message.content[0] == '!':
             await self.process_command(message)
@@ -40,6 +36,10 @@ class LOMS(discord.Client):
             await message.channel.send('<:migu:740390882435530792>')
         elif msg_tokens[0] == '!fish':
             await message.channel.send('https://cdn.discordapp.com/emojis/651604101226037274.gif?v=1')
+        elif msg_tokens[0] == '!concern':
+            await message.channel.send('https://cdn.discordapp.com/attachments/658813940268269668/744772320282935326/image0-12.jpg')
+        elif msg_tokens[0] == '!jail':
+            await message.channel.send('https://cdn.discordapp.com/attachments/658813940268269668/744772320043728918/go_to_horny_jail_bonk.jpg')
 
 
 # define main function
