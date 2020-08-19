@@ -41,7 +41,7 @@ class LOMS(discord.Client):
         if msg_tokens[0] == '!test':
             await message.channel.send("Testing command...")
         elif msg_tokens[0] == '!list':
-            await message.channel.send('• List of reaction images:\n```' 
+            await message.channel.send('• List of reaction images:\n```\n' 
                                         + '\n'.join(self.img_dict.keys())
                                         + '```'
                                         + '\nExample: \n'
