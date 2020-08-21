@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from commands import *
 import constants
 
+
 # load DISCORD_TOKEN
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -63,7 +64,6 @@ class LOMS(discord.Client):
 # define main function
 def main():
     # instantiate bot
-    #client = discord.Client()
     client = LOMS()
 
     # run bot

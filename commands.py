@@ -49,7 +49,8 @@ class SendMessageCommand(Command):
 class SendFormattedMessageCommand(Command):
     def __init__(self, name, message_type, **kwargs):
         super(SendFormattedMessageCommand, self).__init__(name)
-
+        
+        #TODO: fix this
         for key, value in kwargs.items():
             if key == 'dictionary':
                 self.dictionary = value
