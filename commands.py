@@ -78,14 +78,18 @@ class SendFormattedMessageCommand(Command):
         
         try:
             if self.message_type == constants.LIST_COMMAND:
+                dictionary_keys = [key for key in self.dictionary.keys()]
+                dicionary_keys.sort()
                 await discord_message.channel.send('• List of commands:\n```\n' 
-                                        + '\n'.join(self.dictionary.keys())
+                                        + '\n'.join(dictionary_keys)
                                         + '```'
                                         + '\nExample: \n'
                                         + '```!test```')
             elif self.message_type == constants.LIST_IMAGES_COMMAND:
+                dictionary_keys = [key for key in self.dictionary.keys()]
+                dicionary_keys.sort()
                 await discord_message.channel.send('• List of reaction images:\n```\n' 
-                                        + '\n'.join(self.dictionary.keys())
+                                        + '\n'.join(dictionary_keys)
                                         + '```'
                                         + '\nExample: \n'
                                         + '```!fish```')
