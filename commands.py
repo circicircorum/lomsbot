@@ -19,7 +19,7 @@ class Command():
         try:
             await discord_message.channel.send(self.name + ': Performing default command...')
         except NameError:
-            warn("No Discord message object detected.")
+            warn(EMPTY_MESSAGE_OBJ)
             print()
 
 
@@ -41,7 +41,7 @@ class SendMessageCommand(Command):
         try:
             await discord_message.channel.send(self.message_text)
         except NameError:
-            warn("No Discord message object detected.")
+            warn(EMPTY_MESSAGE_OBJ)
             print()
 
 
@@ -90,4 +90,5 @@ class SendFormattedMessageCommand(Command):
                                         + '\nExample: \n'
                                         + '```!fish```')
         except NameError:
-            warn("Empty Discord message object detected.")
+            warn(EMPTY_MESSAGE_OBJ)
+            print()
