@@ -19,7 +19,7 @@ class Command():
         try:
             await discord_message.channel.send(self.name + ': Performing default command...')
         except NameError:
-            warn(EMPTY_MESSAGE_OBJ)
+            warn(constants.EMPTY_MESSAGE_OBJ)
             print()
 
 
@@ -41,7 +41,7 @@ class SendMessageCommand(Command):
         try:
             await discord_message.channel.send(self.message_text)
         except NameError:
-            warn(EMPTY_MESSAGE_OBJ)
+            warn(constants.EMPTY_MESSAGE_OBJ)
             print()
 
 
@@ -79,7 +79,7 @@ class SendFormattedMessageCommand(Command):
         try:
             if self.message_type == constants.LIST_COMMAND:
                 dictionary_keys = [key for key in self.dictionary.keys()]
-                dicionary_keys.sort()
+                dictionary_keys.sort()
                 await discord_message.channel.send('• List of commands:\n```\n' 
                                         + '\n'.join(dictionary_keys)
                                         + '```'
@@ -87,12 +87,12 @@ class SendFormattedMessageCommand(Command):
                                         + '```!test```')
             elif self.message_type == constants.LIST_IMAGES_COMMAND:
                 dictionary_keys = [key for key in self.dictionary.keys()]
-                dicionary_keys.sort()
+                dictionary_keys.sort()
                 await discord_message.channel.send('• List of reaction images:\n```\n' 
                                         + '\n'.join(dictionary_keys)
                                         + '```'
                                         + '\nExample: \n'
                                         + '```!fish```')
         except NameError:
-            warn(EMPTY_MESSAGE_OBJ)
+            warn(constants.EMPTY_MESSAGE_OBJ)
             print()
