@@ -59,12 +59,12 @@ class SendFormattedMessageCommand(Command):
         
         self.message_type = message_type
         try:
-            if self.message_type == constants.LIST_COMMAND and self.dictionary is None:
+            if self.message_type == constants.LIST_COMMANDS_COMMAND and self.dictionary is None:
                 warn("The dictionary of commands is empty.")
             elif self.message_type == constants.LIST_IMAGES_COMMAND and self.dictionary is None:
                 warn("The dictionary of images is empty.")
         except NameError:
-            if self.message_type == constants.LIST_COMMAND:
+            if self.message_type == constants.LIST_COMMANDS_COMMAND:
                 warn("The dictionary of commands is empty.")
             elif self.message_type == constants.LIST_IMAGES_COMMAND:
                 warn("The dictionary of images is empty.")
@@ -78,7 +78,7 @@ class SendFormattedMessageCommand(Command):
                 warn("{0} is not a valid argument for this function".format(key))
         
         try:
-            if self.message_type == constants.LIST_COMMAND:
+            if self.message_type == constants.LIST_COMMANDS_COMMAND:
                 dictionary_keys = [key for key in self.dictionary.keys()]
                 dictionary_keys.sort()
                 await discord_message.channel.send('• List of commands:\n```\n' 
