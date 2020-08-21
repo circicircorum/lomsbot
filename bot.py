@@ -24,7 +24,10 @@ class LOMS(discord.Client):
                          'fish'     :   'https://cdn.discordapp.com/emojis/651604101226037274.gif?v=1',
                          'concern'  :   'https://cdn.discordapp.com/attachments/658813940268269668/744914783660408904/image0-12.jpg',
                          'jail'     :   'https://cdn.discordapp.com/attachments/658813940268269668/744914783320539166/go_to_horny_jail_bonk.jpg',
-                         'heh'      :   'https://cdn.discordapp.com/attachments/658813940268269668/743890032665952286/tsubasa_chibi_bliss_cutout.png'}
+                         'heh'      :   'https://cdn.discordapp.com/attachments/658813940268269668/743890032665952286/tsubasa_chibi_bliss_cutout.png',
+                         'jar'      :   'https://media.discordapp.net/attachments/491156706043232257/741047359752110144/jar_1.png'
+                                        ' https://media.discordapp.net/attachments/491156706043232257/741047360209289226/fubuki.gif'
+                                        ' https://media.discordapp.net/attachments/491156706043232257/741047360926384482/jar_2.png'}
 
 
     async def on_message(self, message):
@@ -41,7 +44,6 @@ class LOMS(discord.Client):
         if msg_tokens[0] == '!test':
             await message.channel.send("Testing command...")
         elif msg_tokens[0] == '!invite':
-            
             await message.channel.send('Click the link below to invite LOMSBot:\nhttps://discord.com/oauth2/authorize?client_id=730301823512215563&scope=bot&permissions=1')
         elif msg_tokens[0] == '!list':
             await message.channel.send('• List of reaction images:\n```\n' 
@@ -51,10 +53,6 @@ class LOMS(discord.Client):
                                         + '```!fish```')
         elif msg_tokens[0][1:] in self.img_dict.keys():
             await message.channel.send(self.img_dict[msg_tokens[0][1:]])
-        elif msg_tokens[0] == '!jar':
-            await message.channel.send('https://media.discordapp.net/attachments/491156706043232257/741047359752110144/jar_1.png')
-            await message.channel.send('https://media.discordapp.net/attachments/491156706043232257/741047360209289226/fubuki.gif')
-            await message.channel.send('https://media.discordapp.net/attachments/491156706043232257/741047360926384482/jar_2.png')
 
 
 # define main function
