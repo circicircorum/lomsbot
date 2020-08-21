@@ -39,7 +39,7 @@ class LOMS(discord.Client):
             #                                                    description='Fish.'),
             'list-images'   :   SendFormattedMessageCommand('List Images', message_type=constants.LIST_IMAGES_COMMAND, dictionary=self.img_dict)
         }
-        self.command_dict['list-commands'] = SendFormattedMessageCommand('List Commands', message_type=constants.LIST_COMMAND, dictionary=self.command_dict)
+        self.command_dict['commands'] = SendFormattedMessageCommand('List Commands', message_type=constants.LIST_COMMAND, dictionary=self.command_dict)
     
 
     async def on_message(self, message):
