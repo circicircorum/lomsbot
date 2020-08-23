@@ -31,7 +31,21 @@ class LOMS(discord.Client):
                          'heh'      :   'https://cdn.discordapp.com/attachments/658813940268269668/743890032665952286/tsubasa_chibi_bliss_cutout.png',
                          'jar'      :   'https://media.discordapp.net/attachments/491156706043232257/741047359752110144/jar_1.png'
                                         ' https://media.discordapp.net/attachments/491156706043232257/741047360209289226/fubuki.gif'
-                                        ' https://media.discordapp.net/attachments/491156706043232257/741047360926384482/jar_2.png'}
+                                        ' https://media.discordapp.net/attachments/491156706043232257/741047360926384482/jar_2.png',
+                        'science'   :   'https://cdn.discordapp.com/attachments/658813940268269668/746864277268463706/hWB6FkS.png',
+                        'monch'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747113266492211220/monch.gif',
+                        'aaaa'      :   'https://cdn.discordapp.com/attachments/260965739266048000/741716971548049448/AAAAAAAAAAAAAAAAAAAA.mp4',
+                        'cat'       :   'https://cdn.discordapp.com/attachments/543137605068521476/739855485557014659/EcEqtChXsAA4ftM.png',
+                        'trick'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747117346820194384/lol-1.png',
+                        'horny'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747117257481781258/stop_being_horny.jpg',
+                        'consequence':  'https://cdn.discordapp.com/attachments/658813940268269668/747117209398280192/FB_IMG_1596365303103.png',
+                        'dog'       :   'https://cdn.discordapp.com/attachments/658813940268269668/747117135699902565/image0.png',
+                        'simp'      :   'https://cdn.discordapp.com/attachments/658813940268269668/747117055316197396/Korone_simp.png',
+                        'this'      :   'https://cdn.discordapp.com/attachments/658813940268269668/747116949460353074/kirika_knows_what_to_do.jpg',
+                        'erect'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747118278954057852/20200817_162852.jpg',
+                        'fishbasa'  :   'https://cdn.discordapp.com/attachments/658813940268269668/747118363179876483/1584101383442.png',
+                        'gun'       :   'https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png',
+                        'derpcat'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747118615643422800/mzznExn.mp4'}
 
         self.command_dict = {
             'test'          :   Command('Test Command'),
