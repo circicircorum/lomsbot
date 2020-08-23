@@ -47,7 +47,7 @@ class LOMS(discord.Client):
                         'gun'       :   'https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png',
                         'derpcat'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747118615643422800/mzznExn.mp4',
                         'turkey'    :   'https://cdn.discordapp.com/attachments/658813940268269668/741303257179226252/1920px-Flag_of_Germany.png',
-                        'france'    :   'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/1280px-Flag_of_Senegal.svg.png'
+                        'france'    :   'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/1280px-Flag_of_Senegal.svg.png',
                         'senegal'   :   'https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png'}
 
         self.command_dict = {
