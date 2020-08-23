@@ -45,7 +45,8 @@ class LOMS(discord.Client):
                         'erect'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747118278954057852/20200817_162852.jpg',
                         'fishbasa'  :   'https://cdn.discordapp.com/attachments/658813940268269668/747118363179876483/1584101383442.png',
                         'gun'       :   'https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png',
-                        'derpcat'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747118615643422800/mzznExn.mp4'}
+                        'derpcat'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747118615643422800/mzznExn.mp4',
+                        'turkey'    :   'https://cdn.discordapp.com/attachments/658813940268269668/741303257179226252/1920px-Flag_of_Germany.png'}
 
         self.command_dict = {
             'test'          :   Command('Test Command'),
