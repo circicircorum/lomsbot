@@ -51,8 +51,8 @@ class LOMS(discord.Client):
                         'france'    :   'https://cdn.discordapp.com/attachments/658813940268269668/747123059944587425/france.png',
                         'senegal'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747123022409760788/senegal.png',
                         'pepepet'   :   'https://cdn.discordapp.com/emojis/726295409219338280.gif?v=1',
-                        'caminar'   :   'https://www.youtube.com/watch?v=u45G7newmfI',
-                        'furret'    :   '<:furret:747820815982002277>',
+                        'caminarsong':   'https://www.youtube.com/watch?v=u45G7newmfI',
+                        'caminar'   :   '<:caminar:747822035664633917>',
                         'laser'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747820651317952592/pekolaser.gif'}
 
         self.command_dict = {
