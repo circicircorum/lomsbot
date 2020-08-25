@@ -40,7 +40,7 @@ class LOMS(discord.Client):
                         'horny'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747117257481781258/stop_being_horny.jpg',
                         'consequence':  'https://cdn.discordapp.com/attachments/658813940268269668/747117209398280192/FB_IMG_1596365303103.png',
                         'dog'       :   'https://cdn.discordapp.com/attachments/658813940268269668/747117135699902565/image0.png',
-                        'simp'      :   'https://cdn.discordapp.com/attachments/658813940268269668/747117055316197396/Korone_simp.png',
+                        'simp'      :   'https://cdn.discordapp.com/attachments/658813940268269668/747819750645825566/simp.png',
                         'this'      :   'https://cdn.discordapp.com/attachments/658813940268269668/747116949460353074/kirika_knows_what_to_do.jpg',
                         'erect'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747118278954057852/20200817_162852.jpg',
                         'fishbasa'  :   'https://cdn.discordapp.com/attachments/658813940268269668/747118363179876483/1584101383442.png',
@@ -49,7 +49,10 @@ class LOMS(discord.Client):
                         'turkey'    :   'https://cdn.discordapp.com/attachments/658813940268269668/741303257179226252/1920px-Flag_of_Germany.png',
                         'germany'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747122985512730634/germany.png',
                         'france'    :   'https://cdn.discordapp.com/attachments/658813940268269668/747123059944587425/france.png',
-                        'senegal'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747123022409760788/senegal.png'}
+                        'senegal'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747123022409760788/senegal.png',
+                        'pepepet'   :   'https://cdn.discordapp.com/emojis/726295409219338280.gif?v=1',
+                        'caminar'   :   'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjH88yOxLbrAhXWdXAKHSVDDxIQyCkwAHoECAoQBA&url=https%3A%\2F%\2Fwww.youtube.com%\2Fwatch%\3Fv%3Du45G7newmfI&usg=AOvVaw08HqGpSddfgIObw5s1EcD_',
+                        'furret'    :   'https://cdn.discordapp.com/emojis/601860542910562322.gif?v=1'}
 
         self.command_dict = {
             'test'          :   Command('Test Command'),
