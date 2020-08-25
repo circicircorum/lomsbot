@@ -53,7 +53,7 @@ class LOMS(discord.Client):
                         'pepepet'   :   'https://cdn.discordapp.com/emojis/726295409219338280.gif?v=1',
                         'caminarsong':  'https://www.youtube.com/watch?v=u45G7newmfI',
                         'caminar'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747822743516348436/caminar.gif',
-                        'laser'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747820651317952592/pekolaser.gif'}
+                        'laser'     :   'https://tenor.com/view/hololive-vtuber-usada-pekora-crazy-usagi-laser-gif-16904860'}
 
         self.command_dict = {
             'test'          :   Command('Test Command'),
