@@ -51,7 +51,7 @@ class LOMS(discord.Client):
                         'france'    :   'https://cdn.discordapp.com/attachments/658813940268269668/747123059944587425/france.png',
                         'senegal'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747123022409760788/senegal.png',
                         'pepepet'   :   'https://cdn.discordapp.com/emojis/726295409219338280.gif?v=1',
-                        'caminar'   :   'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjH88yOxLbrAhXWdXAKHSVDDxIQyCkwAHoECAoQBA&url=https%3A%\2F%\2Fwww.youtube.com%\2Fwatch%\3Fv%3Du45G7newmfI&usg=AOvVaw08HqGpSddfgIObw5s1EcD_',
+                        'caminar'   :   'https://www.youtube.com/watch?v=u45G7newmfI',
                         'furret'    :   '<:furret:747820815982002277>',
                         'laser'     :   'https://cdn.discordapp.com/attachments/658813940268269668/747820651317952592/pekolaser.gif'}
 
