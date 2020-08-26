@@ -55,7 +55,7 @@ class LOMS(discord.Client):
                         'caminar'   :   'https://cdn.discordapp.com/attachments/658813940268269668/747822743516348436/caminar.gif',
                         'laser'     :   'https://tenor.com/view/hololive-vtuber-usada-pekora-crazy-usagi-laser-gif-16904860',
                         'rave'      :   'https://cdn.discordapp.com/attachments/658813940268269668/747825341082501201/rave.gif',
-                        'langou2'   :   'https://cdn.discordapp.com/attachments/152778418549817344/748126883987587092/unknown.png',
+                        'langou2'   :   'https://cdn.discordapp.com/attachments/658813940268269668/748129052044427344/unknown.png',
                         'langou'    :   'https://cdn.discordapp.com/attachments/658813940268269668/748127487724355604/langou.jpg'}
 
         self.command_dict = {
