@@ -1,5 +1,5 @@
-.env
-.gitignore
-notes-for-self
-test.py
 __pycache__/*
+
+.env
+
+misc/*
