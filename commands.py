@@ -94,6 +94,14 @@ class SendFormattedMessageCommand(Command):
                                         + '```'
                                         + '\nExample: \n'
                                         + '```!fish```')
+            elif self.message_type == constants.LIST_DEFAULT_COMMAND:
+                dictionary_keys = [key for key in self.dictionary.keys()]
+                dictionary_keys.sort()
+                await discord_message.channel.send('• List:\n```\n' 
+                                        + '\n'.join(dictionary_keys)
+                                        + '```'
+                                        + '\nExample: \n'
+                                        + '```!fish```')
         except NameError:
             warn(constants.EMPTY_MESSAGE_OBJ)
             print()

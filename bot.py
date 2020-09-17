@@ -31,7 +31,8 @@ class LOMS(discord.Client):
             'invite'        :   SendMessageCommand('Send Invite', message_text='Click the link below to invite LOMSBot:\nhttps://discord.com/oauth2/authorize?client_id=730301823512215563&scope=bot&permissions=1'),
             #'fish'      :   SendMessageCommand('Fish',          message_text='https://cdn.discordapp.com/emojis/651604101226037274.gif?v=1',
             #                                                    description='Fish.'),
-            'list-images'   :   SendFormattedMessageCommand('List Images', message_type=constants.LIST_IMAGES_COMMAND, dictionary=self.img_dict)
+            'list-images'   :   SendFormattedMessageCommand('List Images', message_type=constants.LIST_IMAGES_COMMAND, dictionary=self.img_dict),
+            'list-info'     :   SendFormattedMessageCommand('List Inforgraphics', message_type=constants.LIST_DEFAULT_COMMAND, dictionary=self.info_dict)
         }
         self.command_dict['commands'] = SendFormattedMessageCommand('List Commands', message_type=constants.LIST_COMMANDS_COMMAND, dictionary=self.command_dict)
     
@@ -51,15 +52,26 @@ class LOMS(discord.Client):
             await self.command_dict[msg_tokens[0][1:]].action(discord_message=message)
         elif msg_tokens[0][1:] in self.img_dict.keys():
             await message.channel.send(self.img_dict[msg_tokens[0][1:]])
+        elif msg_tokens[0][1:] in self.info_dict.keys():
+            await message.channel.send(self.info_dict[msg_tokens[0][1:]])
     
 
     def init_dict(self, filename):
+        # load img_dict
         with open('img_dict.json', 'r') as f:
             self.img_dict = json.load(f)
         
         for key, value in self.img_dict.items():
             if isinstance(value, list):
                 self.img_dict[key] = ' '.join(value)
+        
+        # load info_dict
+        with open('info_dict.json', 'r') as f:
+            self.info_dict = json.load(f)
+        
+        for key, value in self.info_dict.items():
+            if isinstance(value, list):
+                self.info_dict[key] = ' '.join(value)
 
 
 # define main function
