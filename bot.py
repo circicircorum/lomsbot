@@ -41,6 +41,7 @@ class LOMS(discord.Client):
             for word in ['danger', 'dangerous', 'crisis', 'risk', 'risky']:
                 if word in tokens:
                     await message.channel.send(self.img_dict['crisis'])
+                    break
         
 
     async def process_command(self, message):
