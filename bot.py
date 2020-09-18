@@ -37,6 +37,7 @@ class LOMS(discord.Client):
             await self.process_command(message)
         else:
             tokens = re.split('\W+', message.content)
+            tokens = [token.lower() for token in tokens]
             for word in ['danger', 'dangerous', 'crisis', 'risk', 'risky']:
                 if word in tokens:
                     await message.channel.send(self.img_dict['crisis'])
