@@ -28,6 +28,7 @@ class LOMS(discord.Client):
         channel = self.get_channel(730386849570357258)
         await channel.send(f'Logged on as {self.user}!')
 
+
     async def on_message(self, message):
         print(message, end='\n\n')
         print('Message from {0.author}: {0.content}'.format(message), end='\n\n')
@@ -54,7 +55,6 @@ class LOMS(discord.Client):
                     await message.channel.send(dictionary[cname])
                 elif isinstance(dictionary[cname], list):
                     await message.channel.send(random.choice(dictionary[cname]))
-                    
 
         # if msg_tokens[0][1:] in self.command_dict.keys():
         #     await self.command_dict[msg_tokens[0][1:]].action(discord_message=message)
@@ -89,7 +89,9 @@ class LOMS(discord.Client):
         }
         self.command_dict['commands'] = SendFormattedMessageCommand('List Commands', message_type=constants.LIST_COMMANDS_COMMAND, dictionary=self.command_dict)
 
+        # define dict_list
         self.dict_list = [self.command_dict, self.img_dict, self.info_dict]
+
 
 # define main function
 def main():
