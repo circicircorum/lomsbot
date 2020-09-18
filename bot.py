@@ -1,6 +1,7 @@
 import discord
 import os
 import random
+import re
 #import psycopg2
 import json
 from dotenv import load_dotenv
@@ -33,20 +34,27 @@ class LOMS(discord.Client):
 
         if message.content[0] == '!':
             await self.process_command(message)
-
+        else:
+            tokens = re.split('\W+', message.content)
+            for word in ['danger', 'dangerous', 'crisis', 'risk', 'risky']:
+                if word in tokens:
+                    await message.channel.send(self.img_dict['crisis'])
+        
 
     async def process_command(self, message):
         msg_tokens = message.content.split()
+        cname = msg_tokens[0][1:]
 
         # use if the number of dictionaries grow...
         for dictionary in self.dict_list:
-            if msg_tokens[0][1:] in dictionary.keys():
-                if isinstance(dictionary[msg_tokens[0][1:]], Command):
-                    await self.command_dict[msg_tokens[0][1:]].action(discord_message=message)
-                elif isinstance(dictionary[msg_tokens[0][1:]], str):
-                    await message.channel.send(dictionary[msg_tokens[0][1:]])
-                elif isinstance(dictionary[msg_tokens[0][1:]], list):
-                    await message.channel.send(random.choice(dictionary[msg_tokens[0][1:]]))
+            if cname in dictionary.keys():
+                if isinstance(dictionary[cname], Command):
+                    await self.command_dict[cname].action(discord_message=message)
+                elif isinstance(dictionary[cname], str):
+                    await message.channel.send(dictionary[cname])
+                elif isinstance(dictionary[cname], list):
+                    await message.channel.send(random.choice(dictionary[cname]))
+                    
 
         # if msg_tokens[0][1:] in self.command_dict.keys():
         #     await self.command_dict[msg_tokens[0][1:]].action(discord_message=message)
