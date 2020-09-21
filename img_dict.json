@@ -60,10 +60,9 @@
         "coding"    :   "https://cdn.discordapp.com/attachments/658813940268269668/757069872240001054/coder.jpg",
         "grab"      :   "https://cdn.discordapp.com/attachments/658813940268269668/756461548658229309/dbfmjp1nvtl51.jpg",
         "french"    :   "https://cdn.discordapp.com/attachments/658813940268269668/756453251888447498/u02fkboiswj51.jpg",
-        "yabai"     :   "https://cdn.discordapp.com/attachments/300723600632053761/756133630316904448/Screenshot_20200421-141008_Twitter.jpg",
-        "chrispet"  :   "https://cdn.discordapp.com/emojis/752996305697243257.gif?v=1",
         "germany2"  :   ["https://cdn.discordapp.com/attachments/658813940268269668/757072758898425976/1200px-Flag_of_Austria.png",
-                        "https://cdn.discordapp.com/attachments/658813940268269668/757073264752328735/flag-of-liechtenstein.png"],
+                        "https://cdn.discordapp.com/attachments/658813940268269668/757073264752328735/flag-of-liechtenstein.png",
+                        "https://cdn.discordapp.com/attachments/658813940268269668/757456802425208930/692px-Flag_of_Belgium.png"],
         "france2"   :   ["https://cdn.discordapp.com/attachments/658813940268269668/747123059944587425/france.png",
                         "https://cdn.discordapp.com/attachments/658813940268269668/757074980013080746/1280px-Flag_of_Mauritius.png",
                         "https://cdn.discordapp.com/attachments/658813940268269668/757075357835722852/1200px-Flag_of_Algeria.png",
@@ -74,6 +73,9 @@
         "brain"     :   "https://cdn.discordapp.com/attachments/658813940268269668/757386621401169950/2bptiddlloh41.png",
         "brain2"    :   "https://cdn.discordapp.com/attachments/658813940268269668/757385979433713714/0ptj2fp217c41.png",
         "bestkorea" :   "https://cdn.discordapp.com/attachments/658813940268269668/757387790869856316/2000px-Flag_of_North_Korea.png",
-        "worstkorea":  "https://cdn.discordapp.com/attachments/658813940268269668/757387842220458054/2000px-Flag_of_South_Korea.png"
+        "worstkorea":   "https://cdn.discordapp.com/attachments/658813940268269668/757387842220458054/2000px-Flag_of_South_Korea.png",
+        "cutepet"   :   "https://cdn.discordapp.com/attachments/658813940268269668/757397129332523099/671772208095559690.gif",
+        "awawa"     :   "https://cdn.discordapp.com/attachments/757398739223576646/757455734182248458/622256120177754113.gif",
+        "shake"     :   "https://cdn.discordapp.com/attachments/757398739223576646/757455777098367066/641457344987004939.gif"
         
 }
