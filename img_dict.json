@@ -79,6 +79,10 @@
         "shake"     :   "https://cdn.discordapp.com/attachments/757398739223576646/757455777098367066/641457344987004939.gif",
         "sosig"     :   "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png",
         ".o0"       :   ["https://cdn.discordapp.com/attachments/658813940268269668/746864277268463706/hWB6FkS.png",
-                        "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png"]
+                        "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png"],
+        "kyuubey"   :   ["https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png",
+                        "https://cdn.discordapp.com/attachments/757398739223576646/758090753175060510/20200608_140550.jpg"],
+        "kyuubeygun":   "https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png",
+        "car"       :   "https://cdn.discordapp.com/attachments/757398739223576646/758090753175060510/20200608_140550.jpg"
         
 }
