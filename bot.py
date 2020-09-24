@@ -68,7 +68,7 @@ class LOMS(discord.Client):
 
     def init_dict(self, filename):
         # load img_dict
-        with open('img_dict.json', 'r') as f:
+        with open('img_dict.json', 'r', encoding='utf-8') as f:
             self.img_dict = json.load(f)
         
         # concatenation behaviour (old)
@@ -77,7 +77,7 @@ class LOMS(discord.Client):
         #        self.img_dict[key] = ' '.join(value)
         
         # load info_dict
-        with open('info_dict.json', 'r') as f:
+        with open('info_dict.json', 'r', encoding='utf-8') as f:
             self.info_dict = json.load(f)
 
         # define command_dict
