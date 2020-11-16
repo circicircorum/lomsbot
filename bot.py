@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
-import logging
 import os
 from dotenv import load_dotenv
+import logging
 
 import cogs
 
@@ -13,6 +13,8 @@ class LOMS(commands.Bot):
 
     LOMS.
     '''
+
+
     def __init__(self, command_prefix='?', description='LOMS.'):
         # initialise bot
         super().__init__(command_prefix=command_prefix, description=description)
@@ -21,14 +23,20 @@ class LOMS(commands.Bot):
         self.add_cog(cogs.DictSpeak(self, command_prefix, ['img_dict.json', 'info_dict.json'], ['images', 'info']))
         #self.add_cog(cogs.Bookkeeper(self))
 
+
     async def on_ready(self):
+        # send a message on the specified channel whenever the bot becomes ready
         print(f'Logged on as {self.user}!')
         channel = self.get_channel(730386849570357258)
         await channel.send(f'Logged on as {self.user}!')
 
+
     async def on_message(self, message):
+        # log all messages with their attributes to standard output
         print(message, end='\n\n')
         print('Message from {0.author}: {0.content}'.format(message), end='\n\n')
+
+        # invoke default method
         await self.process_commands(message)
 
 
@@ -46,6 +54,7 @@ def main():
 
     # run bot
     bot.run(TOKEN)
+
 
 # run main()
 if __name__ == "__main__":
