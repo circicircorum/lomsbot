@@ -55,7 +55,7 @@ class MonitorChan(commands.Cog):
                     return await ctx.send('Error while downloading file.')
                 data = io.BytesIO(await resp.read())
                 rfile = discord.File(data)
-                rfile.filename = reaction_name + '.jpg'
+                rfile.filename = reaction_name + '.gif' # allows users to favourite normal images too
                 message = await self.channel.send(content=reaction_name, file=rfile)
 
         if message is None:
