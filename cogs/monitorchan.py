@@ -34,7 +34,7 @@ class MonitorChan(commands.Cog):
 
 
     @react.command()
-    async def add(self, ctx, reaction_name, link):
+    async def add(self, ctx, file_type, reaction_name, link):
         if self.channel is None:
             return await ctx.send('Please wait for the bot to be ready (channel not found).')
         
@@ -55,7 +55,7 @@ class MonitorChan(commands.Cog):
                     return await ctx.send('Error while downloading file.')
                 data = io.BytesIO(await resp.read())
                 rfile = discord.File(data)
-                rfile.filename = reaction_name + '.gif' # allows users to favourite normal images too
+                rfile.filename = reaction_name + '.' + file_type
                 message = await self.channel.send(content=reaction_name, file=rfile)
 
         if message is None:

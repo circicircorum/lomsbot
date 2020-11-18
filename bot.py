@@ -20,10 +20,17 @@ class LOMS(commands.Bot):
         # initialise bot
         super().__init__(command_prefix=command_prefix, description=description)
 
+        # names dictionaries containing simple "commands"
+        dict_list =         ['img_dict.json',   'img2_dict.json',   'special_dict.json',    'info_dict.json']
+        dict_names_list =   ['images',          'images-2',         'special',              'info']
+
+        # add a prefix to all entries in the dictionary list
+        dir_prefix = 'dictionaries/'
+        for index, filename in enumerate(dict_list):
+            dict_list[index] = dir_prefix + filename
+
         # add cogs
-        self.add_cog(ds.DictSpeak(self, command_prefix,
-                                ['img_dict.json',   'img2_dict.json',   'special_dict.json',    'info_dict.json'],
-                                ['images',          'images-2',         'special',              'info']))
+        self.add_cog(ds.DictSpeak(self, command_prefix, dict_list, dict_names_list))
         self.add_cog(mc.MonitorChan(self))
 
 
