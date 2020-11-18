@@ -21,7 +21,9 @@ class LOMS(commands.Bot):
         super().__init__(command_prefix=command_prefix, description=description)
 
         # add cogs
-        self.add_cog(ds.DictSpeak(self, command_prefix, ['img_dict.json', 'info_dict.json'], ['images', 'info']))
+        self.add_cog(ds.DictSpeak(self, command_prefix,
+                                ['img_dict.json',   'img2_dict.json',   'special_dict.json',    'info_dict.json'],
+                                ['images',          'images-2',         'special',              'info']))
         self.add_cog(mc.MonitorChan(self))
 
 
