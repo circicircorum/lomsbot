@@ -6,7 +6,7 @@ import json
 
 class DictSpeak(commands.Cog):
     '''
-    DictSpeak(bot, command_prefix)
+    class DictSpeak(commands.Cog)
 
     For simple message look-ups.
     '''
@@ -24,6 +24,9 @@ class DictSpeak(commands.Cog):
     async def on_message(self, message):
 
         # check if the prefix matches
+        if len(message.content) == 0:
+            return
+
         if message.content[0] == self.command_prefix:
             
             # extract comamnd name
@@ -31,7 +34,7 @@ class DictSpeak(commands.Cog):
             cname = msg_tokens[0][1:]
 
             # search dictionaries for command
-            for _, dictionary in self.dict_dict:
+            for dictionary in self.dict_dict.values():
 
                 # check if the command is in the dictionary
                 if cname in dictionary.keys():
@@ -47,7 +50,7 @@ class DictSpeak(commands.Cog):
 
     @commands.command()
     async def list(self, ctx, dict_name=None):
-        # check is a dict_name was given
+        # check if a dict_name was given
         if dict_name is None:
             await ctx.send('List of command dictionaries: \n```\n'
                             + '\n'.join([name for name in self.dict_dict.keys()])

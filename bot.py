@@ -4,12 +4,13 @@ import os
 from dotenv import load_dotenv
 import logging
 
-import cogs
+import cogs.dictspeak as ds
+import cogs.monitorchan as mc
 
 
 class LOMS(commands.Bot):
     '''
-    LOMS()
+    class LOMS(commands.Bot)
 
     LOMS.
     '''
@@ -20,8 +21,8 @@ class LOMS(commands.Bot):
         super().__init__(command_prefix=command_prefix, description=description)
 
         # add cogs
-        self.add_cog(cogs.DictSpeak(self, command_prefix, ['img_dict.json', 'info_dict.json'], ['images', 'info']))
-        #self.add_cog(cogs.Bookkeeper(self))
+        self.add_cog(ds.DictSpeak(self, command_prefix, ['img_dict.json', 'info_dict.json'], ['images', 'info']))
+        self.add_cog(mc.MonitorChan(self))
 
 
     async def on_ready(self):
