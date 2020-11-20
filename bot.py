@@ -6,6 +6,7 @@ import logging
 
 import cogs.dictspeak as ds
 import cogs.monitorchan as mc
+import cogs.bookkeeper as bk
 
 
 class LOMS(commands.Bot):
@@ -18,7 +19,7 @@ class LOMS(commands.Bot):
 
     def __init__(self, command_prefix='?', description='LOMS.'):
         # initialise bot
-        super().__init__(command_prefix=command_prefix, description=description)
+        super().__init__(command_prefix=command_prefix, description=description, help_command=None)
 
         # names dictionaries containing simple "commands"
         dict_list =         ['img_dict.json',   'img2_dict.json',   'special_dict.json',    'info_dict.json']
@@ -32,6 +33,7 @@ class LOMS(commands.Bot):
         # add cogs
         self.add_cog(ds.DictSpeak(self, command_prefix, dict_list, dict_names_list))
         self.add_cog(mc.MonitorChan(self))
+        self.add_cog(bk.BookKeeper(self))
 
 
     async def on_ready(self):
@@ -48,6 +50,7 @@ class LOMS(commands.Bot):
 
         # invoke default method
         await self.process_commands(message)
+    
 
 
 # define main function

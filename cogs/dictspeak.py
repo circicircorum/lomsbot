@@ -48,24 +48,24 @@ class DictSpeak(commands.Cog):
                         await message.channel.send(random.choice(dictionary[cname]))
     
 
-    @commands.command()
-    async def list(self, ctx, dict_name=None):
+    @commands.command(name='list')
+    async def list_dict(self, ctx, dict_name=None):
         # check if a dict_name was given
         if dict_name is None:
-            await ctx.send('List of command dictionaries: \n```\n'
+            await ctx.send('List of dictionaries: \n```\n'
                             + '\n'.join([name for name in self.dict_dict.keys()])
                             + '```')
         
         # send the list of commands in the dictionary
         elif dict_name in self.dict_dict.keys():
-            await ctx.send('List of commands in dictionary: \n```\n'
+            await ctx.send('List of entries in dictionary: \n```\n'
                             + '\n'.join([cname for cname in self.dict_dict[dict_name]])
                             + '```')
         
         # send error message if no such dictionary exists
         else:
             await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
-
+    
 
     def init_dict(self, filenames, names):
         # initialise an empty dictionary of dictionaries
