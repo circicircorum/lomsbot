@@ -17,7 +17,7 @@ class LOMS(commands.Bot):
     '''
 
 
-    def __init__(self, command_prefix='?', description='LOMS.'):
+    def __init__(self, command_prefix=['?', '!'], description='LOMS.'):
         # initialise bot
         super().__init__(command_prefix=command_prefix, description=description, help_command=None)
 

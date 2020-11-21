@@ -27,7 +27,7 @@ class DictSpeak(commands.Cog):
         if len(message.content) == 0:
             return
 
-        if message.content[0] == self.command_prefix:
+        if message.content[0] in self.command_prefix:
             
             # extract comamnd name
             msg_tokens = message.content.split()
