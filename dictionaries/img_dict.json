@@ -15,7 +15,6 @@
         "simp"      :   "https://cdn.discordapp.com/attachments/658813940268269668/747819750645825566/simp.png",
         "fishbasa"  :   "https://cdn.discordapp.com/attachments/658813940268269668/747118363179876483/1584101383442.png",
         "derpcat"   :   "https://cdn.discordapp.com/attachments/658813940268269668/747118615643422800/mzznExn.mp4",
-        "pepepet"   :   "https://cdn.discordapp.com/emojis/726295409219338280.gif?v=1",
         "laser"     :   "https://tenor.com/view/hololive-vtuber-usada-pekora-crazy-usagi-laser-gif-16904860",
         "rave"      :   "https://cdn.discordapp.com/attachments/658813940268269668/747825341082501201/rave.gif",
         "langou2"   :   "https://cdn.discordapp.com/attachments/658813940268269668/748129052044427344/unknown.png",
@@ -27,12 +26,18 @@
         "umu"       :   "https://cdn.discordapp.com/attachments/658813940268269668/756073628604301342/umu.png",
         "dumb"      :   "https://cdn.discordapp.com/attachments/658813940268269668/756073701560156211/dumb.png",
         "this"      :   "https://cdn.discordapp.com/attachments/658813940268269668/756073902723170304/this.png",
-        "headpat"   :   "https://cdn.discordapp.com/attachments/658813940268269668/756074018246885416/yukiPat.png",
         "today"     :   "https://cdn.discordapp.com/attachments/658813940268269668/756074664777744424/image03.jpg",
         "crisis"    :   "https://cdn.discordapp.com/attachments/658813940268269668/756074748147925012/kiki_kanri.webm",
         "padoruwall":   "https://cdn.discordapp.com/attachments/658813940268269668/756074837750841394/icametopadoru.png",
         "sleep"     :   "https://cdn.discordapp.com/attachments/658813940268269668/756075201871085639/DXClb_HVwAE5BaH.jpg",
         "brain"     :   "https://cdn.discordapp.com/attachments/658813940268269668/757386621401169950/2bptiddlloh41.png",
-        "brain2"    :   "https://cdn.discordapp.com/attachments/658813940268269668/757385979433713714/0ptj2fp217c41.png"
+        "brain2"    :   "https://cdn.discordapp.com/attachments/658813940268269668/757385979433713714/0ptj2fp217c41.png",
+        "dess"      :   "https://cdn.discordapp.com/attachments/757398739223576646/780623296026509332/dess.gif",
+        "kirifish"  :   "https://cdn.discordapp.com/attachments/757398739223576646/780629644767658104/kirifish.png",
+        "basafish"  :   "https://cdn.discordapp.com/attachments/757398739223576646/780629695166545940/basafish.png",
+        "flute"     :   "https://cdn.discordapp.com/attachments/757398739223576646/779217678828175370/flute.jpg",
+        "confused"  :   "https://cdn.discordapp.com/attachments/757398739223576646/779006071716053012/confused.gif",
+        "awwsheep"  :   "https://cdn.discordapp.com/attachments/757398739223576646/778833709583040553/awsheep.gif",
+        "whatame"  :   "https://cdn.discordapp.com/attachments/757398739223576646/778833128583069747/sheep.gif"
         
 }
