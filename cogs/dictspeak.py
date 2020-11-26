@@ -60,7 +60,7 @@ class DictSpeak(commands.Cog):
         elif dict_name in self.dict_dict.keys():
             entries = '\n'.join([cname for cname in self.dict_dict[dict_name]])
 
-            if sort is "sort":
+            if sort == "sort":
                 entries = '\n'.join([cname for cname in self.dict_dict[dict_name]].sort())
 
             await ctx.send('List of entries in dictionary: \n```\n'
