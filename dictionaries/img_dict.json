@@ -29,7 +29,7 @@
         "today"     :   "https://cdn.discordapp.com/attachments/658813940268269668/756074664777744424/image03.jpg",
         "crisis"    :   "https://cdn.discordapp.com/attachments/658813940268269668/756074748147925012/kiki_kanri.webm",
         "padoruwall":   "https://cdn.discordapp.com/attachments/658813940268269668/756074837750841394/icametopadoru.png",
-        "sleep"     :   "https://cdn.discordapp.com/attachments/658813940268269668/756075201871085639/DXClb_HVwAE5BaH.jpg",
+        "kanadesleep":  "https://cdn.discordapp.com/attachments/658813940268269668/756075201871085639/DXClb_HVwAE5BaH.jpg",
         "brain"     :   "https://cdn.discordapp.com/attachments/658813940268269668/757386621401169950/2bptiddlloh41.png",
         "brain2"    :   "https://cdn.discordapp.com/attachments/658813940268269668/757385979433713714/0ptj2fp217c41.png",
         "dess"      :   "https://cdn.discordapp.com/attachments/757398739223576646/780623296026509332/dess.gif",
@@ -38,6 +38,13 @@
         "flute"     :   "https://cdn.discordapp.com/attachments/757398739223576646/779217678828175370/flute.jpg",
         "confused"  :   "https://cdn.discordapp.com/attachments/757398739223576646/779006071716053012/confused.gif",
         "awwsheep"  :   "https://cdn.discordapp.com/attachments/757398739223576646/778833709583040553/awsheep.gif",
-        "whatame"  :   "https://cdn.discordapp.com/attachments/757398739223576646/778833128583069747/sheep.gif"
-        
+        "whatame"   :   "https://cdn.discordapp.com/attachments/757398739223576646/778833128583069747/sheep.gif",
+        "carolsleep":   "https://cdn.discordapp.com/attachments/757398739223576646/781377523975192586/carolsleep.jpg",
+        "bikkicat"  :   "https://cdn.discordapp.com/attachments/757398739223576646/781378412408471582/bikkicat.png",
+        "yuuka"     :   "https://cdn.discordapp.com/attachments/757398739223576646/781378724863541248/yuuka.png",
+        "fire"      :   "https://cdn.discordapp.com/attachments/757398739223576646/781379026979651614/fire.png",
+        "maria"     :   "https://cdn.discordapp.com/attachments/757398739223576646/781379162258145280/maria.png",
+        "yeah"      :   "https://cdn.discordapp.com/attachments/757398739223576646/781379339160649778/yeah.png",
+        "bikkifight":   "https://cdn.discordapp.com/attachments/757398739223576646/781379587241672734/bikkifight.png",
+        "yay"       :   "https://cdn.discordapp.com/attachments/757398739223576646/781379827575816202/yay.png"
 }
