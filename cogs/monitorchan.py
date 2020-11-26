@@ -60,9 +60,3 @@ class MonitorChan(commands.Cog):
 
         if message is None:
             return await ctx.send('Error while retrieving image message.')
-
-
-    @react.command()
-    async def remove(self, ctx, name):
-        await ctx.send()
-        pass
