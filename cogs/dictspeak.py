@@ -49,7 +49,7 @@ class DictSpeak(commands.Cog):
     
 
     @commands.command(name='list')
-    async def list_dict(self, ctx, dict_name=None):
+    async def list_dict(self, ctx, dict_name=None, sort=None):
         # check if a dict_name was given
         if dict_name is None:
             await ctx.send('List of dictionaries: \n```\n'
@@ -58,8 +58,13 @@ class DictSpeak(commands.Cog):
         
         # send the list of commands in the dictionary
         elif dict_name in self.dict_dict.keys():
+            entries = '\n'.join([cname for cname in self.dict_dict[dict_name]])
+
+            if sort is "sort":
+                entries = '\n'.join([cname for cname in self.dict_dict[dict_name]].sort())
+
             await ctx.send('List of entries in dictionary: \n```\n'
-                            + '\n'.join([cname for cname in self.dict_dict[dict_name]])
+                            + entries
                             + '```')
         
         # send error message if no such dictionary exists
