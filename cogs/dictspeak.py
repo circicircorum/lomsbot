@@ -58,11 +58,13 @@ class DictSpeak(commands.Cog):
         
         # send the list of commands in the dictionary
         elif dict_name in self.dict_dict.keys():
-            entries = '\n'.join([cname for cname in self.dict_dict[dict_name]])
+            entries = [cname for cname in self.dict_dict[dict_name]]
 
+            # sort entries if required
             if sort == "sort":
-                entries = '\n'.join([cname for cname in self.dict_dict[dict_name]].sort())
-
+                entries.sort()
+            
+            entries = '\n'.join(entries)
             await ctx.send('List of entries in dictionary: \n```\n'
                             + entries
                             + '```')

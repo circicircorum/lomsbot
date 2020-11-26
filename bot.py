@@ -1,8 +1,10 @@
 import discord
 from discord.ext import commands
 import os
+import sys
 from dotenv import load_dotenv
 import logging
+
 
 import cogs.dictspeak as ds
 import cogs.monitorchan as mc
@@ -17,7 +19,7 @@ class LOMS(commands.Bot):
     '''
 
 
-    def __init__(self, command_prefix=['?'], description='LOMS.'):
+    def __init__(self, command_prefix=['!'], description='LOMS.'):
         # initialise bot
         super().__init__(command_prefix=command_prefix, description=description, help_command=None)
 
@@ -63,7 +65,10 @@ def main():
     logging.basicConfig(level=logging.INFO)
 
     # instantiate bot
-    bot = LOMS()
+    if len(sys.argv) > 1:
+        bot = LOMS(sys.argv[1])
+    else:
+        bot = LOMS()
 
     # run bot
     bot.run(TOKEN)
