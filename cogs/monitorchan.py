@@ -45,10 +45,7 @@ class MonitorChan(commands.Cog):
         if guild_roles[-1] not in ctx.message.author.roles:
             return await ctx.send('Please obtain the necessary permissions to add reaction images.')
         
-        # ds = self.bot.get_cog('DictSpeak')
-        # if dict_name in ds.dict_dict.keys():
-        #     dictionary = ds.dict_dict[dict_name]
-        
+        # download file using the link provided
         async with aiohttp.ClientSession() as session:
             async with session.get(link) as resp:
                 if resp.status != 200:

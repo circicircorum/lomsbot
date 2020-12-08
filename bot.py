@@ -9,6 +9,7 @@ import logging
 import cogs.dictspeak as ds
 import cogs.monitorchan as mc
 import cogs.bookkeeper as bk
+import cogs.pickergame as pg
 
 
 class LOMS(commands.Bot):
@@ -36,6 +37,7 @@ class LOMS(commands.Bot):
         self.add_cog(ds.DictSpeak(self, command_prefix, dict_list, dict_names_list))
         self.add_cog(mc.MonitorChan(self))
         self.add_cog(bk.BookKeeper(self))
+        #self.add_cog(pg.PickerGame(self, 'padoru token', 'https://cdn.discordapp.com/attachments/655083242587684874/785739068980985886/781002161550917672.png', 10.0))
 
 
     async def on_ready(self):
