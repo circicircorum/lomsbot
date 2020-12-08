@@ -26,6 +26,7 @@ class BookKeeper(commands.Cog):
                             + '\n'.join([command.name for command in self.bot.commands])
                             + '```')
     
+
     @commands.command(name='impostor')
     async def impostor_check(self, ctx, username):
         # define text length
