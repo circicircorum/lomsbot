@@ -83,6 +83,7 @@ class PickerGame(commands.Cog):
 
         else:
             message = await ctx.send('There are no tokens to be picked in this channel. Please wait for a ' + self.token_name + ' to spawn.')
+            await ctx.message.delete()
             await message.delete()
     
 
@@ -113,10 +114,15 @@ class PickerGame(commands.Cog):
     
     @commands.command(name='commence')
     @commands.is_owner()
-    async def start_picker_game(self, ctx):
+    async def start_picker_game(self, ctx, param=None):
         if hasattr(self, 'game_ongoing') and self.game_ongoing:
             return await ctx.send('There is already an ongoing Game.')
         
+        try:
+            self.param = float(param)
+        except:
+            pass
+
         await ctx.send('Let the Games begin!')
         self.game_ongoing = True
         self.drop_token.start()
@@ -140,5 +146,10 @@ class PickerGame(commands.Cog):
 
         # reset game parameters
         self.init_game()
+    
+    @commands.command(name='param')
+    @commands.is_owner()
+    async def peek_param(self, ctx):
+        await ctx.send('lambda: ' + str(self.param))
     
 
