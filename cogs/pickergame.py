@@ -59,7 +59,7 @@ class PickerGame(commands.Cog):
         desc_txt = 'Hey, look! It\'s a ' + self.token_name + '!\n'
         message = await channel.send(embed=discord.Embed(description=desc_txt).set_image(url=self.token_img_link))
         
-        # store message in message buffer 
+        # store message in message buffer
         self.message_buffer[str(channel.id)].append(message)
         #except:
             #print('\nError occurred while trying to drop a token in channel ' + str(channel.id) + '\n')
