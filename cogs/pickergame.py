@@ -14,7 +14,7 @@ class PickerGame(commands.Cog):
     '''
 
 
-    def __init__(self, bot, token_name, token_img_link, param=1.0):
+    def __init__(self, bot, token_name, token_img_link, param=10.0):
         self.bot = bot
         self.token_name = token_name
         self.token_img_link = token_img_link
@@ -35,7 +35,9 @@ class PickerGame(commands.Cog):
         
         # list of channels to exclude
         self.channel_exclusion_list = [777782490525335582, 655083022294581278, 680690289928699904,
-                                       748129827910844456, 655041534873436161, 757398739223576646]
+                                       748129827910844456, 655041534873436161, 757398739223576646,
+                                       757195732192067594, 655095573229338644, 655829744075538432,
+                                       676018759319945246]
         
         # ID of the participating guild
         self.EVENT_GUILD_ID = 620170948708007937
@@ -48,7 +50,7 @@ class PickerGame(commands.Cog):
             if channel.id not in self.channel_exclusion_list and channel.type == discord.ChannelType['text']:
                 if channel.permissions_for(self.bot.get_guild(self.EVENT_GUILD_ID).get_member(self.bot.user.id)).send_messages:
                     break
-        
+
         # increment the token count of the channel
         self.token_count_by_channel[str(channel.id)] += 1
 
@@ -72,19 +74,23 @@ class PickerGame(commands.Cog):
 
     @commands.command(name='pick')
     async def pick_token(self, ctx):
-        if self.token_count_by_channel[str(ctx.message.channel.id)] > 0:
-            self.token_count_by_channel[str(ctx.message.channel.id)] -= 1
-            self.token_count_by_user[ctx.message.author.id] += 1
+        try:
+            if self.token_count_by_channel[str(ctx.message.channel.id)] > 0:
+                self.token_count_by_channel[str(ctx.message.channel.id)] -= 1
+                self.token_count_by_user[ctx.message.author.id] += 1
+            
+                message = await ctx.send(ctx.message.author.mention + ' picked up a ' + self.token_name + '!')
+                await self.message_buffer[str(ctx.message.channel.id)][-1].delete()
+                await ctx.message.delete()
+                await message.delete()
 
-            message = await ctx.send(ctx.message.author.mention + ' picked up a ' + self.token_name + '!')
-            await self.message_buffer[str(ctx.message.channel.id)][-1].delete()
-            await ctx.message.delete()
-            await message.delete()
-
-        else:
-            message = await ctx.send('There are no tokens to be picked in this channel. Please wait for a ' + self.token_name + ' to spawn.')
-            await ctx.message.delete()
-            await message.delete()
+            else:
+                message = await ctx.send('There are no tokens to be picked in this channel. Please wait for a ' + self.token_name + ' to spawn.')
+                time.sleep(1)
+                await ctx.message.delete()
+                await message.delete()
+        except:
+            print('Exception raised in pick_token().\n')
     
 
     @commands.command(name='drop')
@@ -92,6 +98,55 @@ class PickerGame(commands.Cog):
         if self.bot.get_guild(self.EVENT_GUILD_ID).roles[-1] not in ctx.message.author.roles:
             return await ctx.send('Please obtain the necessary permissions to drop tokens.')
         await self.__drop_token()
+
+
+    @commands.command(name='drophere')
+    async def force_drop_token_here(self, ctx):
+        if self.bot.get_guild(self.EVENT_GUILD_ID).roles[-1] not in ctx.message.author.roles:
+            return await ctx.send('Please obtain the necessary permissions to drop tokens.')
+        
+        # check if an appropriate channel was chosen
+        channel = ctx.message.channel
+        if channel.id in self.channel_exclusion_list or not channel.permissions_for(self.bot.get_guild(self.EVENT_GUILD_ID).get_member(self.bot.user.id)).send_messages:
+            return
+
+        # increment the token count of the channel
+        self.token_count_by_channel[str(channel.id)] += 1
+
+        # send token drop message
+        desc_txt = 'Hey, look! It\'s a ' + self.token_name + '!\n'
+        message = await channel.send(embed=discord.Embed(description=desc_txt).set_image(url=self.token_img_link))
+        
+        # store message in message buffer
+        self.message_buffer[str(channel.id)].append(message)
+    
+
+    @commands.command(name='give')
+    async def give_token(self, ctx, user, count):
+        if self.bot.get_guild(self.EVENT_GUILD_ID).roles[-1] not in ctx.message.author.roles:
+            return await ctx.send('Please obtain the necessary permissions to give tokens.')
+        
+        # strip pings down to the user id and check that the input is valid
+        try:
+            user_id = int(user.strip('<@!>'))
+            count = int(count)
+            self.token_count_by_user[user_id] += count
+        except ValueError:
+            print('ValueError in give_token().\n')
+            return
+
+        # send an acknowledgement message
+        if count >= 0:
+            message = await ctx.send(user + ' was given ' + str(count) + ' ' + self.token_name + '(s)!')
+        elif count < 0:
+            message = await ctx.send(user + ' had ' + str(-count) + ' of their ' + self.token_name + '(s) taken away!')
+        
+        # delete the messages after some time
+        time.sleep(1)
+        await ctx.message.delete()
+        await message.delete()
+    
+        return
     
 
     @commands.command(name='leaderboard')
@@ -99,7 +154,7 @@ class PickerGame(commands.Cog):
         message_text = 'Leaderboard: ```\n'
 
         # iterate through the dictionary
-        for user_id, token_count in sorted(self.token_count_by_user.items(), reverse=True):
+        for user_id, token_count in sorted(self.token_count_by_user.items(), key=lambda x : x[1], reverse=True):
             
             user = self.bot.get_user(user_id)
 
