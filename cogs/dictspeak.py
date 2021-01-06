@@ -5,7 +5,6 @@ import json
 import io
 import aiohttp
 
-SECRET_SERVER_ID = 620170948708007937
 SECRET_CHANNEL_ID = 757398739223576646
 
 
@@ -36,16 +35,10 @@ class DictSpeak(commands.Cog):
 
 
     @commands.group()
+    @commands.is_owner()
     async def react(self, ctx):
         if self.upload_channel is None:
             return await ctx.send('Please wait for the bot to be ready (channel not found).')
-
-        guild_roles = self.bot.get_guild(SECRET_SERVER_ID).roles
-        if guild_roles is None:
-            return await ctx.send('Please wait for the bot to be ready (guild not found).')
-
-        if guild_roles[-1] not in ctx.message.author.roles:
-            return await ctx.send('Please obtain the necessary permissions to add reaction images.')
 
 
     @react.command(name='upload')
