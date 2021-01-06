@@ -30,7 +30,7 @@ class DictSpeak(commands.Cog):
         self.upload_channel = self.bot.get_channel(self.upload_channel_id)
         
         if self.upload_channel is None:
-            print("Error while finding the upload channel.")
+            print('Error while finding the upload channel.')
             raise
 
 
@@ -42,7 +42,7 @@ class DictSpeak(commands.Cog):
 
 
     @react.command(name='upload')
-    async def __upload_reaction(self, ctx, file_type, reaction_name, link):
+    async def upload_reaction_media(self, ctx, file_type, reaction_name, link):
         # download file using link provided
         async with aiohttp.ClientSession() as session:
             async with session.get(link) as resp:
@@ -60,7 +60,7 @@ class DictSpeak(commands.Cog):
 
 
     @react.command(name='add')    
-    async def __add_reaction_to_dict(self, ctx, dict_name, reaction_name, link, force=False):
+    async def add_reaction_to_dict(self, ctx, dict_name, reaction_name, link, force=False):
         # send error message if no such dictionary exists
         if dict_name not in self.dict_dict.keys():
             await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
@@ -76,7 +76,7 @@ class DictSpeak(commands.Cog):
 
     
     @react.command(name='remove')
-    async def __remove_reaction_from_dict(self, ctx, dict_name, reaction_name):
+    async def remove_reaction_from_dict(self, ctx, dict_name, reaction_name):
         # send error message if no such dictionary exists
         if dict_name not in self.dict_dict.keys():
             await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
@@ -87,7 +87,7 @@ class DictSpeak(commands.Cog):
 
 
     @react.command(name='save')
-    async def __save_and_sync_(self, ctx, prefix=''):
+    async def save_dict_to_file(self, ctx, prefix=''):
         # save dictionaries to JSON files
         for name, dictionary in self.dict_dict.items():
             with open(self.dir_prefix + name + '.json', 'w', encoding='utf-8') as f:
@@ -137,7 +137,7 @@ class DictSpeak(commands.Cog):
             entries = [cname for cname in self.dict_dict[dict_name]]
 
             # sort entries if required
-            if sort == "sort":
+            if sort == 'sort':
                 entries.sort()
             
             entries = '\n'.join(entries)

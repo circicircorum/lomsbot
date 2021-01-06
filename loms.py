@@ -21,7 +21,11 @@ class LOMS(commands.Bot):
         # add cogs
         self.add_cog(ds.DictSpeak(self, command_prefix, dict_list, dict_names_list, dir_prefix))
         self.add_cog(bk.BookKeeper(self))
-        self.add_cog(pg.PickerGame(self, 'padoru token', 'https://cdn.discordapp.com/attachments/655083242587684874/785739068980985886/781002161550917672.png', picker_param))
+        self.add_cog(pg.PickerGame(self,
+                                'padoru token',
+                                'https://cdn.discordapp.com/attachments/655083242587684874/785739068980985886/781002161550917672.png',
+                                param=picker_param,
+                                load_game_files=True))
 
 
     async def on_ready(self):
