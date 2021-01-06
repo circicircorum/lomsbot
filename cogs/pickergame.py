@@ -13,16 +13,17 @@ class PickerGame(commands.Cog):
     """
 
 
-    def __init__(self, bot, token_name, token_img_link, param=10.0, game_file_dir_prefix='picker/', load_game_files=False):
+    def __init__(self, bot, token_name, token_img_link, param=10.0, game_file_dir_prefix='picker/', game_file='pickergame.json'):
 
         self.bot = bot
         self.token_name = token_name
         self.token_img_link = token_img_link
         self.game_file_dir_prefix = game_file_dir_prefix
+        self.game_file = game_file
         self.param = float(param)
 
         self.init_game()
-        self.init_shop(load_game_files)
+        self.init_shop(game_file)
     
     
     def init_game(self):
@@ -45,18 +46,12 @@ class PickerGame(commands.Cog):
         self.EVENT_GUILD_ID = 620170948708007937
     
 
-    def init_shop(self, load=False):
+    def init_shop(self, game_file):
         self.item_list_by_user = {}
         self.item_value_list = defaultdict(int)
 
-        if load:
-            with open(self.game_file_dir_prefix + 'pickergame.json', 'r', encoding='utf-8') as f:
-                self.item_value_list = json.load(f)['items']
-        else:
-            self.item_value_list['apple'] = 1
-            self.item_value_list['share'] = 5
-            self.item_value_list['coin'] = 10
-    
+        with open(self.game_file_dir_prefix + game_file, 'r', encoding='utf-8') as f:
+            self.item_value_list = json.load(f)['items']
     
     async def __drop_token(self):
         # loop until an appropriate channel is chosen
@@ -296,7 +291,7 @@ class PickerGame(commands.Cog):
     @game.command(name='load')
     async def load_leaderboard(self, ctx):
         with open(self.game_file_dir_prefix + 'picker-game-leaderboard.json', 'r', encoding='utf-8') as f:
-            self.token_count_by_user = json.load(f)
+            self.token_count_by_user = defaultdict(int, json.load(f))
         with open(self.game_file_dir_prefix + 'picker-game-user-items.json', 'r', encoding='utf-8') as f:
             self.item_list_by_user = json.load(f)
         await ctx.send('Loaded game stats from file.')
@@ -333,6 +328,7 @@ class PickerGame(commands.Cog):
 
         # reset game parameters
         self.init_game()
+        self.init_shop(self.game_file)
 
 
     @game.command(name='param')
