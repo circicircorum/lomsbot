@@ -7,14 +7,13 @@ import math
 from collections import defaultdict
 
 class PickerGame(commands.Cog):
-    '''
-    class PickerGame(commands.Cog)
-
+    """
     A simple game where players pick up tokens.
-    '''
+    """
 
 
     def __init__(self, bot, token_name, token_img_link, param=10.0):
+
         self.bot = bot
         self.token_name = token_name
         self.token_img_link = token_img_link

@@ -1,60 +1,8 @@
-import discord
-from discord.ext import commands
+from dotenv import load_dotenv
 import os
 import sys
-from dotenv import load_dotenv
 import logging
-
-
-import cogs.dictspeak as ds
-import cogs.monitorchan as mc
-import cogs.bookkeeper as bk
-import cogs.pickergame as pg
-
-
-class LOMS(commands.Bot):
-    '''
-    class LOMS(commands.Bot)
-
-    LOMS.
-    '''
-
-
-    def __init__(self, command_prefix=['!'], picker_param=0.8, description='LOMS.'):
-        # initialise bot
-        super().__init__(command_prefix=command_prefix, description=description, help_command=None)
-
-        # names dictionaries containing simple "commands"
-        dict_list =         ['img_dict.json',   'img2_dict.json',   'special_dict.json',    'info_dict.json']
-        dict_names_list =   ['images',          'images-2',         'special',              'info']
-
-        # add a prefix to all entries in the dictionary list
-        dir_prefix = 'dictionaries/'
-        for index, filename in enumerate(dict_list):
-            dict_list[index] = dir_prefix + filename
-
-        # add cogs
-        self.add_cog(ds.DictSpeak(self, command_prefix, dict_list, dict_names_list))
-        self.add_cog(mc.MonitorChan(self))
-        self.add_cog(bk.BookKeeper(self))
-        self.add_cog(pg.PickerGame(self, 'padoru token', 'https://cdn.discordapp.com/attachments/655083242587684874/785739068980985886/781002161550917672.png', picker_param))
-
-    async def on_ready(self):
-        # send a message on the specified channel whenever the bot becomes ready
-        print(f'Logged on as {self.user}!')
-        channel = self.get_channel(730386849570357258)
-        await channel.send(f'Logged on as {self.user}!')
-
-
-    async def on_message(self, message):
-        # log all messages with their attributes to standard output
-        print(message, end='\n\n')
-        print('Message from {0.author}: {0.content}'.format(message), end='\n\n')
-
-        # invoke default method
-        await self.process_commands(message)
-    
-
+import loms
 
 # define main function
 def main():
@@ -64,14 +12,18 @@ def main():
 
     # set up logging
     logging.basicConfig(level=logging.INFO)
+    
+    # define file names and internal names of reaction dictionaries
+    dict_names_list =   ['images', 'images-2', 'special', 'info']
+    dict_list = [name + '.json' for name in dict_names_list]
 
     # instantiate bot
     if len(sys.argv) > 2:
-            bot = LOMS(sys.argv[1], sys.argv[2])
+            bot = loms.LOMS(dict_list, dict_names_list, sys.argv[1], sys.argv[2])
     elif len(sys.argv) == 2:
-            bot = LOMS(sys.argv[1])
+            bot = loms.LOMS(dict_list, dict_names_list, sys.argv[1])
     else:
-        bot = LOMS()
+        bot = loms.LOMS(dict_list, dict_names_list)
 
     # run bot
     bot.run(TOKEN)

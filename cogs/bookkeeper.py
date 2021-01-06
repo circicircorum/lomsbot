@@ -3,11 +3,9 @@ from discord.ext import commands
 import random
 
 class BookKeeper(commands.Cog):
-    '''
-    class BookKeeper(commands.Cog)
-
-    For some basic commands.
-    '''
+    """
+    Contains some basic commands.
+    """    
 
 
     def __init__(self, bot):
@@ -21,9 +19,15 @@ class BookKeeper(commands.Cog):
     
 
     @commands.command(name='commands')
-    async def command_list(self, ctx):
+    async def command_list(self, ctx, sort=None):
+        entries = [command.name for command in self.bot.commands]
+
+        if sort == "sort":
+            entries.sort()
+
+        entries = '\n'.join(entries)
         await ctx.send('List of commands: \n```\n'
-                            + '\n'.join([command.name for command in self.bot.commands])
+                            + entries
                             + '```')
     
 

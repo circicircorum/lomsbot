@@ -1,22 +1,13 @@
 import discord
 from discord.ext import commands
-import io
-import aiohttp
-
-SECRET_SERVER_ID = 620170948708007937
-SECRET_CHANNEL_ID = 757398739223576646
 
 class MonitorChan(commands.Cog):
-    '''
-    class MonitorChan(commands.Cog)
-
-    Monitor channels.
-    '''
-
+    """
+    Monitors channels.
+    """
 
     def __init__(self, bot, channel_id=SECRET_CHANNEL_ID):
         self.bot = bot
-        self.cid = channel_id
     
     
     @commands.Cog.listener()
@@ -30,11 +21,6 @@ class MonitorChan(commands.Cog):
 
     @commands.group()
     async def react(self, ctx):
-        pass
-
-
-    @react.command()
-    async def add(self, ctx, file_type, reaction_name, link):
         if self.channel is None:
             return await ctx.send('Please wait for the bot to be ready (channel not found).')
         
@@ -44,6 +30,30 @@ class MonitorChan(commands.Cog):
         
         if guild_roles[-1] not in ctx.message.author.roles:
             return await ctx.send('Please obtain the necessary permissions to add reaction images.')
+        pass
+
+
+    @react.command(name='upload')
+    async def __upload_image(self, ctx, file_type, reaction_name, link):
+
+        # download file using the link provided
+        async with aiohttp.ClientSession() as session:
+            async with session.get(link) as resp:
+                if resp.status != 200:
+                    return await ctx.send('Error while downloading file.')
+                data = io.BytesIO(await resp.read())
+
+                # upload file to specified channel
+                rfile = discord.File(data)
+                rfile.filename = reaction_name + '.' + file_type
+                message = await self.channel.send(content=reaction_name, file=rfile)
+
+        if message is None:
+            return await ctx.send('Error while retrieving image message.')
+    
+
+    @react.command(name='add')
+    async def __upload_image(self, ctx, reaction_name, link):
         
         # download file using the link provided
         async with aiohttp.ClientSession() as session:
@@ -51,9 +61,8 @@ class MonitorChan(commands.Cog):
                 if resp.status != 200:
                     return await ctx.send('Error while downloading file.')
                 data = io.BytesIO(await resp.read())
+
+
                 rfile = discord.File(data)
                 rfile.filename = reaction_name + '.' + file_type
                 message = await self.channel.send(content=reaction_name, file=rfile)
-
-        if message is None:
-            return await ctx.send('Error while retrieving image message.')
