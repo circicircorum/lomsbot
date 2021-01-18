@@ -68,5 +68,9 @@
         "maybe"
     ],
     "cheese": "https://cdn.discordapp.com/attachments/757398739223576646/796356551404158976/cheese.mp4",
-    "fennygun": "https://cdn.discordapp.com/attachments/757398739223576646/797693921584218142/fennygun.png"
+    "fennygun": "https://cdn.discordapp.com/attachments/757398739223576646/797693921584218142/fennygun.png",
+    "monkey": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/800676119858774046/HowToTrickAMonkey.mp4",
+        "https://cdn.discordapp.com/attachments/757398739223576646/800677213899980840/HowToTrickAMonkey.png"
+    ]
 }
