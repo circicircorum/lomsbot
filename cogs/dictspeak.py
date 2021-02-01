@@ -60,26 +60,40 @@ class DictSpeak(commands.Cog):
 
 
     @react.command(name='add')    
-    async def add_reaction_to_dict(self, ctx, dict_name, reaction_name, link, force=False):
+    async def add_reaction_to_dict(self, ctx, dict_name, reaction_name, link, option=None):
         # send error message if no such dictionary exists
         if dict_name not in self.dict_dict.keys():
             await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
             return
         
-        # send error message if a reaction by the same name already exists
-        if reaction_name in self.dict_dict[dict_name].keys() and not force:
-            await ctx.send('Error: another reaction with the same name already exists.')
+        # add reaction if no reaction by the same name exists
+        if reaction_name not in self.dict_dict[dict_name].keys():
+            self.dict_dict[dict_name][reaction_name] = [link]
+            await ctx.send('Added ' + reaction_name + ' to ' + dict_name + '.')
             return
         
-        self.dict_dict[dict_name][reaction_name] = link
-        await ctx.send('Added ' + reaction_name + ' to ' + dict_name + '.')
+        # handle situations where a reaction by the same name already exists
+        if option == "replace":
+            self.dict_dict[dict_name][reaction_name] = [link]
+            await ctx.send('Replaced ' + reaction_name + ' in ' + dict_name + '.')
+        elif option == "overload":
+            self.dict_dict[dict_name][reaction_name].append(link)
+            await ctx.send('Overloaded ' + reaction_name + ' in ' + dict_name + '.')
+        else:
+            await ctx.send('Error: another reaction with the same name already exists.')
+        return
 
-    
+
     @react.command(name='remove')
     async def remove_reaction_from_dict(self, ctx, dict_name, reaction_name):
         # send error message if no such dictionary exists
         if dict_name not in self.dict_dict.keys():
             await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
+            return
+            
+        # send error message if no such reaction exists
+        if reaction_name not in self.dict_dict[dict_name]:
+            await ctx.send('Error: No reaction named ' + reaction_name + ' found in ' + dict_name + '.')
             return
         
         self.dict_dict[dict_name].pop(reaction_name)
@@ -100,54 +114,51 @@ class DictSpeak(commands.Cog):
     async def on_message(self, message):
 
         # check if the prefix matches
-        if len(message.content) == 0:
+        if len(message.content) == 0 or message.content[0] not in self.command_prefix:
             return
+        
+        # extract command name
+        msg_tokens = message.content.split()
+        cname = msg_tokens[0][1:]
 
-        if message.content[0] in self.command_prefix:
-            
-            # extract comamnd name
-            msg_tokens = message.content.split()
-            cname = msg_tokens[0][1:]
+        # search dictionaries for command
+        for dictionary in self.dict_dict.values():
 
-            # search dictionaries for command
-            for dictionary in self.dict_dict.values():
-
-                # check if the command is in the dictionary
-                if cname in dictionary.keys():
-                    
-                    # send the message directly if the entry is a string
-                    if isinstance(dictionary[cname], str):
-                        await message.channel.send(dictionary[cname])
-                    
-                    # choose one of the possible options if the entry is a list
-                    elif isinstance(dictionary[cname], list):
-                        await message.channel.send(random.choice(dictionary[cname]))
+            # check if the command is in the dictionary
+            if cname in dictionary.keys():
+                
+                # randomly select a message if the command is overloaded
+                if len(dictionary[cname]) > 1:
+                    await message.channel.send(random.choice(dictionary[cname]))
+                else:
+                    await message.channel.send(dictionary[cname][0])
     
 
     @commands.command(name='list')
     async def list_dict(self, ctx, dict_name=None, sort=None):
-        # check if a dict_name was given
+        # list dictionaries if no dict_name is given
         if dict_name is None:
             await ctx.send('List of dictionaries: \n```\n'
                             + '\n'.join([name for name in self.dict_dict.keys()])
                             + '```')
+            return
+
+        # send error message if no such dictionary exists
+        if dict_name not in self.dict_dict.keys():
+            await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
+            return
         
         # send the list of commands in the dictionary
-        elif dict_name in self.dict_dict.keys():
-            entries = [cname for cname in self.dict_dict[dict_name]]
+        entries = [cname for cname in self.dict_dict[dict_name]]
 
-            # sort entries if required
-            if sort == 'sort':
-                entries.sort()
-            
-            entries = '\n'.join(entries)
-            await ctx.send('List of entries in dictionary: \n```\n'
-                            + entries
-                            + '```')
+        # sort entries if required
+        if sort == 'sort':
+            entries.sort()
         
-        # send error message if no such dictionary exists
-        else:
-            await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
+        entries = '\n'.join(entries)
+        await ctx.send('List of entries in dictionary: \n```\n'
+                        + entries
+                            + '```')
     
 
     def init_dict(self, filenames, names):
@@ -158,6 +169,11 @@ class DictSpeak(commands.Cog):
         for i, filename in enumerate(filenames):
             with open(self.dir_prefix + filename, 'r', encoding='utf-8') as f:
                 dictionary = json.load(f)
+            
+            # turn all strings into lists
+            for reaction in dictionary:
+                if isinstance(dictionary[reaction], str):
+                    dictionary[reaction] = [dictionary[reaction]]
 
             # store the dictionary with its name
             self.dict_dict[names[i]] = dictionary
