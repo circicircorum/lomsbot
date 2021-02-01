@@ -19,12 +19,17 @@ class BookKeeper(commands.Cog):
     
 
     @commands.command(name='commands')
-    async def command_list(self, ctx, sort=None):
-        entries = [command.name for command in self.bot.commands]
-
-        if sort == "sort":
-            entries.sort()
-
+    async def command_list(self, ctx):
+        entries = []
+        for command in self.bot.commands:
+            if isinstance(command, commands.Group):
+                subcommands_list = [subcommand.name for subcommand in command.commands]
+                subcommands_list.sort()
+                entries.append(command.name + ' [' + '/'.join(subcommands_list) + ']')
+            else:
+                entries.append(command.name)
+        
+        entries.sort()
         entries = '\n'.join(entries)
         await ctx.send('List of commands: \n```\n'
                             + entries

@@ -17,10 +17,18 @@
         "https://cdn.discordapp.com/attachments/757398739223576646/781378412408471582/bikkicat.png",
         "https://cdn.discordapp.com/attachments/757398739223576646/781379587241672734/bikkifight.png"
     ],
-    "chess": "https://www.youtube.com/watch?v=E2xNlzsnPCQ",
-    "caminarsong": "https://www.youtube.com/watch?v=u45G7newmfI",
-    "caminar": "https://cdn.discordapp.com/attachments/658813940268269668/747822743516348436/caminar.gif",
-    "jar": "https://media.discordapp.net/attachments/491156706043232257/741047359752110144/jar_1.png https://media.discordapp.net/attachments/491156706043232257/741047360209289226/fubuki.gif https://media.discordapp.net/attachments/491156706043232257/741047360926384482/jar_2.png",
+    "chess": [
+        "https://www.youtube.com/watch?v=E2xNlzsnPCQ"
+    ],
+    "caminarsong": [
+        "https://www.youtube.com/watch?v=u45G7newmfI"
+    ],
+    "caminar": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/747822743516348436/caminar.gif"
+    ],
+    "jar": [
+        "https://media.discordapp.net/attachments/491156706043232257/741047359752110144/jar_1.png https://media.discordapp.net/attachments/491156706043232257/741047360209289226/fubuki.gif https://media.discordapp.net/attachments/491156706043232257/741047360926384482/jar_2.png"
+    ],
     "kyuubey": [
         "https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png",
         "https://cdn.discordapp.com/attachments/757398739223576646/758090753175060510/20200608_140550.jpg"
@@ -29,11 +37,21 @@
         "https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png",
         "https://cdn.discordapp.com/attachments/658813940268269668/756072994668937221/unknown.png"
     ],
-    "turkey": "https://cdn.discordapp.com/attachments/658813940268269668/741303257179226252/1920px-Flag_of_Germany.png",
-    "germany": "https://cdn.discordapp.com/attachments/658813940268269668/747122985512730634/germany.png",
-    "france": "https://cdn.discordapp.com/attachments/658813940268269668/747123059944587425/france.png",
-    "senegal": "https://cdn.discordapp.com/attachments/658813940268269668/747123022409760788/senegal.png",
-    "french": "https://cdn.discordapp.com/attachments/658813940268269668/756453251888447498/u02fkboiswj51.jpg",
+    "turkey": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/741303257179226252/1920px-Flag_of_Germany.png"
+    ],
+    "germany": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/747122985512730634/germany.png"
+    ],
+    "france": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/747123059944587425/france.png"
+    ],
+    "senegal": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/747123022409760788/senegal.png"
+    ],
+    "french": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/756453251888447498/u02fkboiswj51.jpg"
+    ],
     "germany2": [
         "https://cdn.discordapp.com/attachments/658813940268269668/757072758898425976/1200px-Flag_of_Austria.png",
         "https://cdn.discordapp.com/attachments/658813940268269668/757073264752328735/flag-of-liechtenstein.png",
@@ -48,8 +66,12 @@
         "https://cdn.discordapp.com/attachments/658813940268269668/757074730229694554/1200px-Flag_of_Morocco.png",
         "https://cdn.discordapp.com/attachments/658813940268269668/757075146002399242/1280px-Flag_of_Luxembourg.png"
     ],
-    "bestkorea": "https://cdn.discordapp.com/attachments/658813940268269668/757387790869856316/2000px-Flag_of_North_Korea.png",
-    "worstkorea": "https://cdn.discordapp.com/attachments/658813940268269668/757387842220458054/2000px-Flag_of_South_Korea.png",
+    "bestkorea": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/757387790869856316/2000px-Flag_of_North_Korea.png"
+    ],
+    "worstkorea": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/757387842220458054/2000px-Flag_of_South_Korea.png"
+    ],
     ".o0": [
         "https://cdn.discordapp.com/attachments/658813940268269668/746864277268463706/hWB6FkS.png",
         "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png"
@@ -67,8 +89,9 @@
         "no",
         "maybe"
     ],
-    "cheese": "https://cdn.discordapp.com/attachments/757398739223576646/796356551404158976/cheese.mp4",
-    "fennygun": "https://cdn.discordapp.com/attachments/757398739223576646/797693921584218142/fennygun.png",
+    "cheese": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/796356551404158976/cheese.mp4"
+    ],
     "monkey": [
         "https://cdn.discordapp.com/attachments/757398739223576646/800678492898721832/HowToTrickAMonkey.mp4",
         "https://cdn.discordapp.com/attachments/757398739223576646/800678378055008256/HowToTrickAMonkey.png"
