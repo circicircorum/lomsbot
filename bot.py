@@ -19,9 +19,9 @@ def main():
 
     # instantiate bot
     if len(sys.argv) > 2:
-            bot = loms.LOMS(dict_list, dict_names_list, sys.argv[1], sys.argv[2])
+            bot = loms.LOMS(dict_list, dict_names_list, command_prefix=sys.argv[1], picker_param=sys.argv[2])
     elif len(sys.argv) == 2:
-            bot = loms.LOMS(dict_list, dict_names_list, sys.argv[1])
+            bot = loms.LOMS(dict_list, dict_names_list, command_prefix=sys.argv[1])
     else:
         bot = loms.LOMS(dict_list, dict_names_list)
 
