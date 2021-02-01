@@ -4,6 +4,7 @@ import random
 import json
 import io
 import aiohttp
+import asyncio
 
 SECRET_CHANNEL_ID = 757398739223576646
 
@@ -73,10 +74,10 @@ class DictSpeak(commands.Cog):
             return
         
         # handle situations where a reaction by the same name already exists
-        if option == "replace":
+        if option == 'replace':
             self.dict_dict[dict_name][reaction_name] = [link]
             await ctx.send('Replaced ' + reaction_name + ' in ' + dict_name + '.')
-        elif option == "overload":
+        elif option == 'overload':
             self.dict_dict[dict_name][reaction_name].append(link)
             await ctx.send('Overloaded ' + reaction_name + ' in ' + dict_name + '.')
         else:
@@ -98,6 +99,50 @@ class DictSpeak(commands.Cog):
         
         self.dict_dict[dict_name].pop(reaction_name)
         await ctx.send('Removed ' + reaction_name + ' from ' + dict_name + '.')
+    
+
+    @react.command(name='rename')
+    async def rename_reaction(self, ctx, dict_name, reaction_name, new_name):
+        # send error message if no such dictionary exists
+        if dict_name not in self.dict_dict.keys():
+            await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
+            return
+            
+        # send error message if no such reaction exists
+        if reaction_name not in self.dict_dict[dict_name]:
+            await ctx.send('Error: No reaction named ' + reaction_name + ' found in ' + dict_name + '.')
+            return
+        
+        self.dict_dict[dict_name][new_name] = self.dict_dict[dict_name][reaction_name]
+        self.dict_dict[dict_name].pop(reaction_name)
+        await ctx.send('Renamed ' + reaction_name + ' in ' + dict_name + ' to ' + new_name + '.')
+    
+
+    @react.command(name='move')
+    async def move_reaction(self, ctx, reaction_name, old_dict_name, new_dict_name):
+        # send error message if the source dictionary does not exist
+        if old_dict_name not in self.dict_dict.keys():
+            await ctx.send('Error: No dictionary named ' + old_dict_name + ' found.')
+            return
+            
+        # send error message if the destination dictionary does not exist
+        if new_dict_name not in self.dict_dict.keys():
+            await ctx.send('Error: No dictionary named ' + new_dict_name + ' found.')
+            return
+            
+        # send error message if no such reaction exists in the source dictionary
+        if reaction_name not in self.dict_dict[old_dict_name]:
+            await ctx.send('Error: No reaction named ' + reaction_name + ' found in ' + old_dict_name + '.')
+            return
+            
+        # send error message if such a reaction already exists in the destination dictionary
+        if reaction_name in self.dict_dict[new_dict_name]:
+            await ctx.send('Error: another reaction with the same name already exists in ' + new_dict_name + '.')
+            return
+        
+        self.dict_dict[new_dict_name][reaction_name] = self.dict_dict[old_dict_name][reaction_name]
+        self.dict_dict[old_dict_name].pop(reaction_name)
+        await ctx.send('Moved ' + reaction_name + ' in ' + old_dict_name + ' to ' + new_dict_name + '.')
 
 
     @react.command(name='save')
@@ -135,7 +180,7 @@ class DictSpeak(commands.Cog):
     
 
     @commands.command(name='list')
-    async def list_dict(self, ctx, dict_name=None, sort=None):
+    async def list_dict(self, ctx, dict_name=None, *args):
         # list dictionaries if no dict_name is given
         if dict_name is None:
             await ctx.send('List of dictionaries: \n```\n'
@@ -148,18 +193,46 @@ class DictSpeak(commands.Cog):
             await ctx.send('Error: No dictionary named ' + dict_name + ' found.')
             return
         
+        # process args
+        sort = False
+        keep = False
+        time = 60
+        if 'sort' in args:
+            sort = True
+        if 'keep' in args:
+            try:
+                if args[args.index('keep') + 1] == 'forever':
+                    keep = True
+                else:
+                    time = int(args[args.index('keep') + 1])
+            except ValueError:
+                await ctx.send('Error: Please provide a valid time value.')
+                return
+            except IndexError:
+                keep = True
+        
         # send the list of commands in the dictionary
         entries = [cname for cname in self.dict_dict[dict_name]]
 
         # sort entries if required
-        if sort == 'sort':
+        if sort is True:
             entries.sort()
         
         entries = '\n'.join(entries)
-        await ctx.send('List of entries in dictionary: \n```\n'
+        message = await ctx.send('List of entries in dictionary: \n```\n'
                         + entries
                             + '```')
-    
+
+        # do not delete message if keep is true
+        if keep is True:
+            return
+        
+        # delete message of dictionary list after a specified amount of time.
+        await asyncio.sleep(time)
+        await message.delete()
+        print('DictSpeak: Dictionary list message deleted.\n')
+        return
+
 
     def init_dict(self, filenames, names):
         # initialise an empty dictionary of dictionaries
