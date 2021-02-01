@@ -210,18 +210,44 @@ class DictSpeak(commands.Cog):
                 return
             except IndexError:
                 keep = True
-        
-        # send the list of commands in the dictionary
-        entries = [cname for cname in self.dict_dict[dict_name]]
 
-        # sort entries if required
-        if sort is True:
-            entries.sort()
-        
-        entries = '\n'.join(entries)
-        message = await ctx.send('List of entries in dictionary: \n```\n'
-                        + entries
-                            + '```')
+        # search using substring
+        if 'search' in args:
+            try:
+                search_string = args[args.index('search') + 1]
+            except IndexError:
+                await ctx.send('Error: Please provide a search string.')
+                return
+
+            results = []
+            for reaction in self.dict_dict[dict_name]:
+                    if search_string  in reaction:
+                        results.append(reaction)
+
+            if len(results) == 0:
+                await ctx.send('No search result found.')
+                return
+
+            if sort is True:
+                results.sort()
+
+            results = '\n'.join(results)
+            message = await ctx.send('Search results in dictionary: \n```\n'
+                                    + results
+                                    + '```')
+
+        else:
+            # send the list of commands in the dictionary
+            entries = [cname for cname in self.dict_dict[dict_name]]
+
+            # sort entries if required
+            if sort is True:
+                entries.sort()
+            
+            entries = '\n'.join(entries)
+            message = await ctx.send('List of entries in dictionary: \n```\n'
+                            + entries
+                                + '```')
 
         # do not delete message if keep is true
         if keep is True:
