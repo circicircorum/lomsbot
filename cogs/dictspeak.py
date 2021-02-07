@@ -249,15 +249,10 @@ class DictSpeak(commands.Cog):
                             + entries
                                 + '```')
 
-        # do not delete message if keep is true
-        if keep is True:
-            return
-        
         # delete message of dictionary list after a specified amount of time.
-        await asyncio.sleep(time)
-        await message.delete()
-        print('DictSpeak: Dictionary list message deleted.\n')
-        return
+        if keep is False:
+            await message.delete(delay=time)
+            print('DictSpeak: Dictionary list message deleted.\n')
 
 
     def init_dict(self, filenames, names):

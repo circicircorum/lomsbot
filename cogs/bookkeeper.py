@@ -35,6 +35,42 @@ class BookKeeper(commands.Cog):
                             + entries
                             + '```')
     
+    @commands.command(name='delete')
+    @commands.is_owner()
+    async def delete_message(self, ctx, msg_link, *args):
+        try:
+            msg_id = int(msg_link.split('/')[-1])
+        except ValueError:
+            message = await ctx.send('Error: Invalid message ID.')
+            return
+
+        message = None
+        try:
+            msg = await ctx.fetch_message(msg_id)
+            await msg.delete()
+        except discord.NotFound:
+            message = await ctx.send('Error: Message not found.')
+        except discord.Forbidden:
+            message = await ctx.send('Error: Permission denied.')
+        except discord.HTTPException:
+            message = await ctx.send('Error: Failed to retrieve message.')
+
+        if message is not None and 'silent' in args:
+            await message.delete(delay=3.0)
+            return
+
+        if 'message' in args:
+            try:
+                message = await ctx.send('Message deleted. Reason:\n'
+                                         '```\n' + str(args[args.index('message') + 1]) + '```')
+            except IndexError:
+                message = await ctx.send('Error: Empty deletion message.')
+        else:
+            message = await ctx.send('Message deleted.')
+
+        if 'silent' in args:
+            await message.delete(delay=3.0)
+
 
     @commands.command(name='impostor')
     async def impostor_check(self, ctx, username):
