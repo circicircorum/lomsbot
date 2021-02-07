@@ -1,10 +1,4 @@
 {
-    "science": [
-        "https://cdn.discordapp.com/attachments/658813940268269668/746864277268463706/hWB6FkS.png"
-    ],
-    "monch": [
-        "https://cdn.discordapp.com/attachments/658813940268269668/747113266492211220/monch.gif"
-    ],
     "this2": [
         "https://cdn.discordapp.com/attachments/658813940268269668/747116949460353074/kirika_knows_what_to_do.jpg"
     ],
@@ -16,9 +10,6 @@
     ],
     "ohmygod": [
         "https://cdn.discordapp.com/attachments/658813940268269668/756071599672787054/533009189791072287.png"
-    ],
-    "rat": [
-        "https://cdn.discordapp.com/attachments/658813940268269668/748950336588480512/image0-113.jpg"
     ],
     "thomas": [
         "https://cdn.discordapp.com/attachments/658813940268269668/757068981747318814/thomas.png"
@@ -65,14 +56,8 @@
     "cutepet": [
         "https://cdn.discordapp.com/attachments/658813940268269668/757397129332523099/671772208095559690.gif"
     ],
-    "awawa": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/757455734182248458/622256120177754113.gif"
-    ],
     "shake": [
         "https://cdn.discordapp.com/attachments/757398739223576646/757455777098367066/641457344987004939.gif"
-    ],
-    "sosig": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png"
     ],
     "kyuubeygun": [
         "https://cdn.discordapp.com/attachments/658813940268269668/747118452623540394/EScakDrXYAALfdb.png"
@@ -80,17 +65,11 @@
     "kyuubeydrive": [
         "https://cdn.discordapp.com/attachments/757398739223576646/758090753175060510/20200608_140550.jpg"
     ],
-    "a": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/758700895910494278/758138837133819955.gif"
-    ],
     "essexyes": [
         "https://cdn.discordapp.com/attachments/757398739223576646/758701696100335626/715030006451011627.gif"
     ],
     "dessvid": [
         "https://cdn.discordapp.com/attachments/757398739223576646/778457026937487360/dess.mp4"
-    ],
-    "dessemote": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/778458331386740746/dessemote.gif"
     ],
     "mask": [
         "https://cdn.discordapp.com/attachments/757398739223576646/780257189042454568/mask.png"
@@ -155,9 +134,6 @@
     "yeah": [
         "https://cdn.discordapp.com/attachments/757398739223576646/781379339160649778/yeah.png"
     ],
-    "bikkifight": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/781379587241672734/bikkifight.png"
-    ],
     "yay": [
         "https://cdn.discordapp.com/attachments/757398739223576646/781379827575816202/yay.png"
     ],
@@ -173,13 +149,46 @@
     "blobsmug": [
         "https://cdn.discordapp.com/attachments/757398739223576646/804348409858621510/714875048556757082.png"
     ],
-    "pop_bubbles": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/803174332129476628/chicken.png"
-    ],
     "importantrequest": [
         "https://cdn.discordapp.com/attachments/757398739223576646/783639846023331850/importantrequest.png"
     ],
     "sip": [
         "https://cdn.discordapp.com/attachments/757398739223576646/797657192168685608/sip.gif"
+    ],
+    "hornyonmain": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/802211917413613578/hornyonmain.png"
+    ],
+    "hornyarrest": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/802212272834609182/hornyarrest.jpg"
+    ],
+    "dessderp": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/778458331386740746/dessemote.gif"
+    ],
+    "whatame": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/778833128583069747/sheep.gif"
+    ],
+    "awwsheep": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/778833709583040553/awsheep.gif"
+    ],
+    "hyperwag": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806788946998460466/hyperwag.gif"
+    ],
+    "popbubbles": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/803174332129476628/chicken.png"
+    ],
+    "cip": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806800614113148938/cip.png"
+    ],
+    "spray": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806800922268663818/spray.png"
+    ],
+    "blobnom": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806801586751799306/blobnom.gif"
+    ],
+    "judoge": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806802457417351188/judoge.png"
+    ],
+    "podge": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806803484925624320/podge.png"
     ]
 }

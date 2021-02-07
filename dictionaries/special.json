@@ -1,15 +1,12 @@
 {
-    "clown": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/778826740003766282/clown.gif",
-        "<:testicles:655066454563225619>"
-    ],
     "sleep": [
         "https://cdn.discordapp.com/attachments/658813940268269668/756075201871085639/DXClb_HVwAE5BaH.jpg",
         "https://cdn.discordapp.com/attachments/757398739223576646/781377523975192586/carolsleep.jpg"
     ],
     "fishy": [
         "https://cdn.discordapp.com/attachments/757398739223576646/780629644767658104/kirifish.png",
-        "https://cdn.discordapp.com/attachments/757398739223576646/780629695166545940/basafish.png"
+        "https://cdn.discordapp.com/attachments/757398739223576646/780629695166545940/basafish.png",
+        "https://cdn.discordapp.com/attachments/658813940268269668/747118363179876483/1584101383442.png"
     ],
     "bikki": [
         "https://cdn.discordapp.com/attachments/658813940268269668/756072994668937221/unknown.png",
@@ -74,7 +71,8 @@
     ],
     ".o0": [
         "https://cdn.discordapp.com/attachments/658813940268269668/746864277268463706/hWB6FkS.png",
-        "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png"
+        "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png",
+        "https://cdn.discordapp.com/attachments/757398739223576646/778826740003766282/clown.gif"
     ],
     "imposter": [
         "```\u3002\u3000\u3000\u3000\u3000\u2022\u3000 \u3000\uff9f\u3000\u3000\u3002 \u3000\u3000.\u3000\u3000\u3000.\u3000\u3000\u3002 \u3000\u3000.\u3000 \u3000\u3000\u3000\n\u3002\u3000 .  They were not the imposter \u2022. \u3002\u0d9e\u3000.\n.\u3000\u3000\u3000\u3000\u3000\u3002\u3000\u3000 \u3002\u3000. \u3000.\u3000 \u3002\u3002 \u3000\u2022   \u2022\u3000.```",
@@ -92,8 +90,39 @@
     "cheese": [
         "https://cdn.discordapp.com/attachments/757398739223576646/796356551404158976/cheese.mp4"
     ],
-    "monkey": [
+    "langou": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/748127487724355604/langou.jpg"
+    ],
+    "langou2": [
+        "https://cdn.discordapp.com/attachments/658813940268269668/748129052044427344/unknown.png"
+    ],
+    "venezuela": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/801484840485519440/venezuela.png"
+    ],
+    "vuvuzela": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/801484791655956560/vuvuzela.png"
+    ],
+    "sosig": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/758079194914881606/inanutshell.png"
+    ],
+    "monkeytrick": [
         "https://cdn.discordapp.com/attachments/757398739223576646/800678492898721832/HowToTrickAMonkey.mp4",
         "https://cdn.discordapp.com/attachments/757398739223576646/800678378055008256/HowToTrickAMonkey.png"
+    ],
+    "monkey": [
+        "https://tenor.com/view/monkey-funny-animals-rescue-gif-14508340",
+        "https://cdn.discordapp.com/attachments/757398739223576646/782816326346997780/monkeydance.gif",
+        "https://cdn.discordapp.com/attachments/757398739223576646/800678492898721832/HowToTrickAMonkey.mp4",
+        "https://cdn.discordapp.com/attachments/757398739223576646/800678378055008256/HowToTrickAMonkey.png",
+        "\ud83d\udc12"
+    ],
+    "hedgehog": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806799233298071562/hedgehog.mp4"
+    ],
+    "cute": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/806799233298071562/hedgehog.mp4",
+        "https://cdn.discordapp.com/attachments/658813940268269668/747825341082501201/rave.gif",
+        "https://cdn.discordapp.com/attachments/658813940268269668/747118615643422800/mzznExn.mp4",
+        "https://cdn.discordapp.com/attachments/757398739223576646/806803484925624320/podge.png"
     ]
 }
