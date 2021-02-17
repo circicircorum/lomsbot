@@ -35,6 +35,7 @@ class BookKeeper(commands.Cog):
                             + entries
                             + '```')
     
+    
     @commands.command(name='delete')
     @commands.is_owner()
     async def delete_message(self, ctx, msg_link, *args):
