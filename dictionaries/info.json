@@ -41,9 +41,6 @@
     "indoeuropean": [
         "https://cdn.discordapp.com/attachments/757398739223576646/782087715931947048/indoeuropean.png"
     ],
-    "indoeuroepan2": [
-        "https://cdn.discordapp.com/attachments/757398739223576646/782088325518589982/indoeuropean2.jpg"
-    ],
     "logistic": [
         "https://cdn.discordapp.com/attachments/757398739223576646/782946887929954334/logistic.png"
     ],
@@ -61,5 +58,14 @@
     ],
     "austronesian2": [
         "https://cdn.discordapp.com/attachments/757398739223576646/810453076641054750/Chronological_dispersal_of_Austronesian_people_across_the_Pacific_28per_Benton_et_al2C_20122C_adapte.png"
+    ],
+    "indoeuropean2": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/782088325518589982/indoeuropean2.jpg"
+    ],
+    "tectonicplates": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/821238028785287208/tectonicplates.png"
+    ],
+    "writingsystems": [
+        "https://cdn.discordapp.com/attachments/757398739223576646/837542805320368148/writingsystems.png"
     ]
 }
