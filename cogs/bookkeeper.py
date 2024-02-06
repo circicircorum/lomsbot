@@ -123,8 +123,4 @@ class BookKeeper(commands.Cog):
                 '.　　　　　。　　 。　. 　.　 。。 　•   •　.```']
 
                 #        "```。　　　　•　 　ﾟ　　。 　　.　　　.　　。 　　.　 　　　\n。　 . • • They were the impostor •. 。ඞ　.\n.　　　　　。　　 。　. 　.　 。。 　•   •　.```"],
-<<<<<<< HEAD
         '''
-=======
-        '''
->>>>>>> 036cdbf (idk)
