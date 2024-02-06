@@ -14,9 +14,13 @@ class BookKeeper(commands.Cog):
 
     @commands.command()
     async def invite(self, ctx):
-        await ctx.send( 'Click the link below to invite LOMSBot:\n'
-                        'https://discord.com/oauth2/authorize?client_id=730301823512215563&scope=bot&permissions=1')
-    
+        # await ctx.send( 'Click the link below to invite LOMSBot:\n'
+        #                 'https://discord.com/oauth2/authorize?client_id=730301823512215563&scope=bot&permissions=1')
+        # await ctx.send( 'Click the link below to invite bèpò:\n'
+        #                 'https://discord.com/api/oauth2/authorize?client_id=1154784213401342062&permissions=40671460589505&scope=bot')
+        #67584
+        await ctx.send( 'Click the link below to invite bèpò:\n'
+                        'https://discord.com/api/oauth2/authorize?client_id=1154784213401342062&permissions=1&scope=bot')
 
     @commands.command(name='commands')
     async def command_list(self, ctx):
@@ -119,4 +123,8 @@ class BookKeeper(commands.Cog):
                 '.　　　　　。　　 。　. 　.　 。。 　•   •　.```']
 
                 #        "```。　　　　•　 　ﾟ　　。 　　.　　　.　　。 　　.　 　　　\n。　 . • • They were the impostor •. 。ඞ　.\n.　　　　　。　　 。　. 　.　 。。 　•   •　.```"],
+<<<<<<< HEAD
         '''
+=======
+        '''
+>>>>>>> 036cdbf (idk)
