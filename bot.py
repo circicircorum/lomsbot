@@ -58,6 +58,8 @@ async def main():
     # client.add_cog(ds.DictSpeak(self, command_prefix, dict_list, dict_names_list, dir_prefix))
     await client.add_cog(ds.DictSpeak(client, '!', dict_list, dict_names_list, 'dictionaries/'))
     await client.add_cog(bk.BookKeeper(client))
+    import cogs.pickergame as pg
+    await client.add_cog(pg.PickerGame(client, "Coco Token", "https://cdn.discordapp.com/attachments/1036923024621969458/1218197028257927280/20240228_192936.png?ex=6606c964&is=65f45464&hm=b29723bfeb2857c3fe77d905b02746a850e3cf3ff96648cf7c7f9a23b5737e9b&", param=10.0))
 import asyncio
 asyncio.run(main())
 
